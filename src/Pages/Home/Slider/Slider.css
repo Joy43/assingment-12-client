@@ -1,0 +1,33 @@
+.slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: auto;
+  }
+  
+  .slide {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .active {
+    z-index: 1;
+  }
+  
