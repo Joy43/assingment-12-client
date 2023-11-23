@@ -9,8 +9,9 @@ import Mainlayout from "../Layout/Mainlayout/Mainlayout";
 import Home from "../Pages/Home/Home/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
-
 import Signup from "../Pages/SignIn/Signup";
+
+
 
 
   export const router = createBrowserRouter([
@@ -24,7 +25,7 @@ import Signup from "../Pages/SignIn/Signup";
             element: <Home></Home>
         },
         {
-path:'longin',
+path:'login',
 element:<Login></Login>,
 
         } ,

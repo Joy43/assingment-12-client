@@ -3,17 +3,17 @@
 import Swal from 'sweetalert2'
 import { BsEyeSlashFill, BsEyeFill } from "react-icons/bs";
 // import { Player, Controls } from '@lottiefiles/react-lottie-player';
-import video from '../../assets/video/login.mp4'
-import { Link} from 'react-router-dom';
+import video from '../../assets/login.mp4'
+import { Link, useLocation, useNavigate} from 'react-router-dom';
 import  { useEffect, useRef, useState } from 'react';
 
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 import useAuth from '../../Hooks/useAuth';
 
 const Login = () => {
    const {signIn}=useAuth()
-//    const location = useLocation();
-//    const navigate = useNavigate();
+   const location = useLocation();
+   const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const videoRef = useRef(null);
     useEffect(() => {
@@ -49,7 +49,7 @@ const Login = () => {
           } 
           // ------------NAVIGATE-----------------
           
-        //   navigate(location?.state?location.state:'/');
+          navigate(location?.state?location.state:'/');
         })
         
         .catch(error => {
@@ -66,10 +66,10 @@ const Login = () => {
         }
     return (
      <div>
-       <Helmet>
+       {/* <Helmet>
       <title>Login</title>
       <meta name='Home' content='This is home page' />
-      </Helmet>
+      </Helmet> */}
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
