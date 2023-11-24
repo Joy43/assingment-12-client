@@ -1,45 +1,85 @@
-import  { useEffect } from 'react';
-import Swiper from 'swiper';
-import 'swiper/css/swiper.min.css';
-const Slider = () => {
-    useEffect(() => {
-        const swiper = new Swiper('.swiper-container', {
-          effect: 'coverflow',
-          grabCursor: true,
-          centeredSlides: true,
-          slidesPerView: 'auto',
-          coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          },
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-        });
-    
-        return () => {
-          swiper.destroy();
-        };
-      }, []);
-    
-    return (
-        <div>
-               <div className="swiper-container">
-      <div className="swiper-wrapper">
-        {/* Your slides go here */}
-        <div className="swiper-slide">Slide 1</div>
-        <div className="swiper-slide">Slide 2</div>
-        <div className="swiper-slide">Slide 3</div>
-        {/* Add more slides as needed */}
-      </div>
-      <div className="swiper-pagination"></div>
-    </div>
-        </div>
-    );
-};
+import  { useState, useEffect } from 'react';
 
-export default Slider;
+
+
+const images = [
+  {
+    url: 'https://i.ibb.co/Wy7qvF1/Apple-i-Pad-10th.png',
+    title: 'Apple iPad 10th Generation',
+    description: 'The latest iPad with powerful features and a stunning display.',
+  },
+  {
+    url: 'https://i.ibb.co/sKX9CSf/xiomi.jpg',
+    title: 'Xiaomi Smartphone',
+    description: 'A high-quality smartphone with advanced features and camera.',
+  },
+  {
+    url: 'https://i.ibb.co/XWn1YL8/google-6a.png',
+    title: 'Google Pixel Phone',
+    description: 'Google Pixel, known for its excellent camera and Android experience.',
+  },
+  {
+     url:'https://i.ibb.co/hBNqsZT/apple-airpods-max-1607550567.gif',
+   title: 'Sony Xperia 1 III ',
+     description: 'A slight improvement over its predecessor ofr best experience in android ',
+   },
+  {
+     url:'https://i.ibb.co/FgXZ3jD/OPPO-A17-price-and-specs-and-availability-via-Revu-Philippines-703x368.jpg',
+   title: 'sumsung',
+     description: 'OPPO F19 is officially announced on April 2021. ',
+   },
+  {
+     url:'https://i.ibb.co/x3thz2M/SONY-TV.jpg',
+   title: '3D SONY LED TV ',
+     description: '3D led lamp 3D SONY LED TV3d wall art light on/off button cell operated',
+   }
+];
+
+function Carousel() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextImage();
+    }, 6000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  return (
+   <div>
+ <div className="carousel mt-6">
+      <button onClick={prevImage} className="prev-button">
+        &lt;
+      </button>
+      <div className="image-container   ">
+        <div className="image-overlay absolute text-center ">
+          <h2 className='ext-white font-bold text-2xl title-animation'>{images[currentImage].title}</h2>
+          <p className='text-white textanimation text-xl font-bold'>{images[currentImage].description}</p>
+        </div>
+        <img  src={images[currentImage].url} alt="Carousel" className="carousel-image opacity-50 " />
+      </div>
+      <button onClick={nextImage} className="next-button">
+        &gt;
+      </button>
+    </div>
+
+
+<div>
+  
+</div>
+   </div>
+  );
+}
+
+export default Carousel;
