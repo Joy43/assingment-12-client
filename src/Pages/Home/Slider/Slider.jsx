@@ -21,11 +21,11 @@ const images = [
   {
      url:'https://i.ibb.co/hBNqsZT/apple-airpods-max-1607550567.gif',
    title: 'Sony Xperia 1 III ',
-     description: 'A slight improvement over its predecessor ofr best experience in android ',
+     description: 'A slight improvement overexperience in android ',
    },
   {
      url:'https://i.ibb.co/FgXZ3jD/OPPO-A17-price-and-specs-and-availability-via-Revu-Philippines-703x368.jpg',
-   title: 'sumsung',
+   title: 'Oppo f36',
      description: 'OPPO F19 is officially announced on April 2021. ',
    },
   {
