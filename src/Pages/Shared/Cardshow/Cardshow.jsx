@@ -1,13 +1,17 @@
 
+import useProduct from '../../../Hooks/useProduct';
 import './Cardshow.css'
 const Cardshow = () => {
+    const product=useProduct();
+    console.log(product);
     return (
         <div>
               <div className="container">
         <ul id="cards">
             <li className="card" id="card1">
                 <div className="card-body">
-                    <h2>Card 1</h2>
+                    <h2>{product.length}</h2>
+                    <img src={product.image} alt="" />
                 </div>
             </li>
             <li className="card" id="card2">

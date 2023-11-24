@@ -1,7 +1,7 @@
 import Cardshow from "../../Shared/Cardshow/Cardshow";
 import Banner from "../Banner/Banner";
 import Faq from "../Faq/Faq";
-import Homeiphonecard from "../Homeiphone/HomeIphonecaard/Homeiphonecard";
+// import Homeiphonecard from "../Homeiphone/HomeIphonecaard/Homeiphonecard";
 
 import Slider from "../Slider/Slider";
 
@@ -17,7 +17,7 @@ const Home = () => {
                 </div>
               
                 <div><Cardshow></Cardshow>  </div> 
-                <div><Homeiphonecard></Homeiphonecard></div>
+                {/* <div><Homeiphonecard></Homeiphonecard></div> */}
                 <div>
                     <Faq></Faq>
                 </div>

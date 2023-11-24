@@ -5,7 +5,9 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Homeiphonecard = ({item}) => {
-    const{_id,name,price,image,Description}=item;
+    const{name,price,image,description}=item;
+    
+    console.log(item);
     useEffect(() => {
         AOS.init({ duration: 1000 }); // You can adjust the duration as needed
       }, []);
@@ -35,16 +37,16 @@ const Homeiphonecard = ({item}) => {
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
-                <p>{Description}</p>
+                <p>{description}</p>
                 <p className="text-xl"><span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3'>Price</span>: ${Price}</p>
                 <p ><span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3'>Offer</span>:{offers}</p>
                 <div className="card-actions">
-                <Link to="/rooms">
+                <Link to="/">
                   {/* button */}
           <div className='justify-center text-center items-center'>
           <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
     <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-    <span className="relative text-black group-hover:text-white">Rooms</span>
+    <span className="relative text-black group-hover:text-white">Product</span>
   </button>
           </div>
                    </Link>

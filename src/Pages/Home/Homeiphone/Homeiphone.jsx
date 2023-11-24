@@ -8,7 +8,7 @@ const Homeiphone = () => {
     return (
         <div className="grid md:grid-cols-2 gap-10">
             {
-                iphonehome.map(item=><Homeiphonecard 
+                iphonehome?.map(item=><Homeiphonecard 
                 key={item._id}
                 item={item}>
 
