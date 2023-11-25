@@ -98,7 +98,7 @@
         "stock": 36,
         "brand": "Samsung",
         "category": "smartphones",
-        "image": "https://i.dummyjson.com/data/products/3/image.jpg"
+        "image": "https://i.ibb.co/R9dDShd/garvit-3-Iyj-Beg-TXLA-unsplash.jpg"
      },
         {
         "name": "OPPOF19",
@@ -109,7 +109,7 @@
         "stock": 123,
         "brand": "OPPO",
         "category": "smartphones",
-        "image": "https://i.dummyjson.com/data/products/4/image.jpg"
+        "image": "https://i.ibb.co/Wp1P4wz/serwin365-0c-G-y-QAd-YIM-unsplash.jpg"
         },
         {
       
@@ -121,7 +121,7 @@
         "stock": 32,
         "brand": "Huawei",
         "category": "smartphones",
-        "image": "https://i.dummyjson.com/data/products/5/image.jpg"
+        "image": "https://i.ibb.co/b2yR8G7/roberto-nickson-h-Lg-Yt-X0r-Pgw-unsplash.jpg"
         },
         {
             "brand": "Samsung",
@@ -177,10 +177,10 @@
         "stock": 83,
         "brand": "Apple",
         "category": "laptops",
-        "image": "https://i.dummyjson.com/data/products/6/image.png"
+        "image": "https://i.ibb.co/Wy7qvF1/Apple-i-Pad-10th.png"
         },
         {
-        "name": "Samsung Galaxy Book",
+        "name": "Sasung laptop",
         "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
         "price": 1499,
         "discountPercentage": 4.15,
@@ -188,7 +188,7 @@
         "stock": 50,
         "brand": "Samsung",
         "category": "laptops",
-        "image": "https://i.dummyjson.com/data/products/7/image.jpg"
+        "image": "https://i.ibb.co/m8bKQW6/dmitry-chernyshov-m-P7a-PSUm7a-E-unsplash.jpg"
          },
         {
         "name": "Microsoft Surface Laptop 4",
@@ -199,18 +199,18 @@
         "stock": 68,
         "brand": "Microsoft Surface",
         "category": "laptops",
-        "image": "https://i.dummyjson.com/data/products/8/image.jpg"
+        "image": "https://i.ibb.co/cvyRJQ0/ales-nesetril-Im7l-Zjxe-Lhg-unsplash.jpg"
        },
         {
         "name": "Infinix INBOOK",
-        "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+        "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey 1 Year Warranty",
         "price": 1099,
         "discountPercentage": 11.83,
         "rating": 4.54,
         "stock": 96,
         "brand": "Infinix",
         "category": "laptops",
-        "image": "https://i.dummyjson.com/data/products/9/image.jpg"
+        "image": "https://i.ibb.co/fXP4Wtz/james-mckinven-tpu-Ao8g-Vs58-unsplash.jpg"
         
         },
         {
@@ -222,7 +222,7 @@
         "stock": 89,
         "brand": "HP Pavilion",
         "category": "laptops",
-        "image": "https://i.dummyjson.com/data/products/10/image.jpeg"
+        "image": "https://i.ibb.co/hVBj4yt/rich-tervet-q2-GNd-Fmhxx4-unsplash.jpg"
         },
        {
             "name": "Flying Wooden Bird",
@@ -233,7 +233,7 @@
             "stock": 17,
             "brand": "Flying Wooden",
             "category": "home-decoration",
-            "image": "https://i.dummyjson.com/data/products/27/image.webp"
+            "image": "https://i.ibb.co/bLS06mN/cheryl-winn-boujnida-jh-Dof9-B6v-PY-unsplash.jpg"
             },
             {
            "name": "3D Embellishment Art Lamp",
@@ -244,7 +244,7 @@
             "stock": 54,
             "brand": "LED Lights",
             "category": "home-decoration",
-            "image": "https://i.dummyjson.com/data/products/28/image.jpg"
+            "image": "https://i.ibb.co/1b3RLXM/naomi-hebert-MP0bga-S-d1c-unsplash.jpg"
              },
             {
             "name": "Handcraft Chinese style",
@@ -255,8 +255,68 @@
             "stock": 7,
             "brand": "luxury palace",
             "category": "home-decoration",
-            "image": "https://i.dummyjson.com/data/products/29/image.webp"
-            }
+            "image": "https://i.ibb.co/BjQkdYW/valery-fedotov-v-FWciisio5g-unsplash.jpg"
+            },
+            {
+                "name": "smart tv",
+                "description": "Handcraft Chinese style art luxury palace hotel villa mansion home decor ceramic vase with brass fruit plate",
+                "price": 600,
+                "discountPercentage": 75.34,
+                "rating": 4.44,
+                "stock": 7,
+                "brand": "luxury palace",
+                "category": "tv",
+                "image": "https://i.ibb.co/j4RLJ3W/nicolas-j-leclercq-q-DLLP0y-P7-FU-unsplash.jpg"
+                },
+            {
+                "name": "smart sony tv",
+                "description": "Handcraft Chinese style art luxury palace hotel villa mansion home decor ceramic vase with brass fruit plate",
+                "price": 6900,
+                "discountPercentage": 75.34,
+                "rating": 5.44,
+                "stock": 7,
+                "brand": "luxury palace",
+                "category": "tv",
+                "image": "https://i.ibb.co/BjwtkTz/web-developer.jpg"
+                },
+                {
+                    "name": "Wireless Noise-Cancelling Headphones",
+                    "description": "Advanced noise-cancelling technology for immersive audio, perfect for travel and work",
+                    "price": 199.99,
+                    "discountPercentage": 20,
+                    "rating": 4.7,
+                    "stock": 15,
+                    "brand": "SoundScape",
+                    "category": "headphones",
+                    "image": "https://i.ibb.co/Dk646Vb/yarenci-hdz-Tt-Ih-Vp-Yo-M-unsplash.jpg"
+                  },
+                  {
+                    "name": "Sports Bluetooth Earphones",
+                    "description": "Sweatproof and comfortable earphones designed for active lifestyles",
+                    "price": 79.99,
+                    "discountPercentage": 15,
+                    "rating": 4.2,
+                    "stock": 30,
+                    "brand": "FitBeat",
+                    "category": "earphones",
+                    "image": "https://i.ibb.co/yY2xpxb/fausto-sandoval-w5m3-PIGvkq-I-unsplash.jpg"
+                  },
+                  {
+                    "name": "Gaming Headset with Surround Sound",
+                    "description": "Immerse yourself in gaming with high-quality surround sound and a comfortable fit",
+                    "price": 149.99,
+                    "discountPercentage": 12,
+                    "rating": 4.8,
+                    "stock": 20,
+                    "brand": "GamerTech",
+                    "category": "headphones",
+                    "image": "https://i.ibb.co/7XKYVRr/ervo-rocks-Zam8-Tv-Eg-N5o-unsplash.jpg"
+                  }
+                  
+                  
+
+                  
+
           
            
             ]

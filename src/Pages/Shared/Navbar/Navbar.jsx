@@ -55,7 +55,7 @@ const themeIconSize = "30px";
 
     return (
         <>
-            <div className="navbar bg-zinc-950 text-white">
+            <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-primary lg:hidden">
@@ -65,7 +65,7 @@ const themeIconSize = "30px";
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl"> Tech world</a>
+                    <a className="btn btn-ghost normal-case text-xl"> <span className="text-[#ea1d5d] text-3xl font-bold">Tech </span>world</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

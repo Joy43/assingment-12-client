@@ -4,7 +4,7 @@ import Faq from "../Faq/Faq";
 import {Helmet} from "react-helmet";
 
 import Slider from "../Slider/Slider";
-import Homeiphonecard from "../Homeiphone/HomeIphonecaard/Homeiphonecard";
+
 import Homeiphone from "../Homeiphone/Homeiphone";
 
 
