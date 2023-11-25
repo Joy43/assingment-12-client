@@ -13,6 +13,7 @@
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "aos": "^2.3.4",
     "axios": "^1.6.2",
+    "canvas-confetti": "^1.9.2",
     "firebase": "^10.6.0",
     "framer-motion": "^10.16.5",
     "localforage": "^1.10.0",

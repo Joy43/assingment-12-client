@@ -4,6 +4,8 @@ import Faq from "../Faq/Faq";
 import {Helmet} from "react-helmet";
 
 import Slider from "../Slider/Slider";
+import Homeiphonecard from "../Homeiphone/HomeIphonecaard/Homeiphonecard";
+import Homeiphone from "../Homeiphone/Homeiphone";
 
 
 const Home = () => {
@@ -19,7 +21,8 @@ const Home = () => {
             <div><Banner></Banner> </div>
               
                 <div><Cardshow></Cardshow>  </div> 
-                {/* <div><Homeiphonecard></Homeiphonecard></div> */}
+                 {/* <div><Homeiphonecard></Homeiphonecard></div>  */}
+                <div><Homeiphone></Homeiphone></div>
            
                 <div><Faq></Faq></div>
                 

@@ -9,6 +9,7 @@ import  { useEffect, useRef, useState } from 'react';
 
 // import { Helmet } from 'react-helmet';
 import useAuth from '../../Hooks/useAuth';
+import Effectbutton from '../Shared/Effect button/EffectButton';
 
 const Login = () => {
    const {signIn}=useAuth()
@@ -144,7 +145,7 @@ Sign in with Google
               <div className="form-control mt-6">
               <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
     <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-    <span className="relative text-black group-hover:text-white">Login</span>
+    <span className="relative"><Effectbutton></Effectbutton></span>
   </button>
               </div>
       </form>

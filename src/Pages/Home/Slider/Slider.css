@@ -7,33 +7,30 @@
     max-width:1400px; /* Adjust as needed */
     margin:  auto;
   }
-  /* title animation */
-  .title-animation {
-    animation: slideIn 6s ease infinite;
-  }
-  
-  @keyframes slideIn {
-    0% {
-      transform: translateY(-20px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  /* typitin des animation */
-  .textanimation {
-    animation: type 6s steps(50, end) 6s forwards infinite;
-  }
-  
-  @keyframes type {
+  @keyframes typing {
     from {
       width: 0;
     }
     to {
       width: 100%;
     }
+  }
+  
+  /* Apply the animation to the title and description */
+  .title-animation {
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .textanimation {
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .textanimation::after {
+    content: '|'; /* Blinking cursor */
+    display: inline-block;
+    animation: typing 1s steps(20, end) infinite;
   }
   
 

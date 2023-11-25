@@ -57,28 +57,25 @@ function Carousel() {
   }, []);
 
   return (
-   <div>
- <div className="carousel mt-6">
-      <button onClick={prevImage} className="prev-button">
-        &lt;
-      </button>
-      <div className="image-container   ">
-        <div className="image-overlay absolute text-center ">
-          <h2 className='ext-white font-bold text-2xl title-animation'>{images[currentImage].title}</h2>
-          <p className='text-white textanimation text-xl font-bold'>{images[currentImage].description}</p>
+    <div>
+      <div className="carousel mt-6">
+        <button onClick={prevImage} className="prev-button">
+          &lt;
+        </button>
+        <div className="image-container">
+          <div className="image-overlay absolute text-center">
+            <h2 className='ext-white font-bold text-2xl title-animation'>{images[currentImage].title}</h2>
+            <p className='text-white textanimation text-xl font-bold'>{images[currentImage].description}</p>
+          </div>
+          <img src={images[currentImage].url} alt="Carousel" className="carousel-image opacity-50" />
         </div>
-        <img  src={images[currentImage].url} alt="Carousel" className="carousel-image opacity-50 " />
+        <button onClick={nextImage} className="next-button">
+          &gt;
+        </button>
       </div>
-      <button onClick={nextImage} className="next-button">
-        &gt;
-      </button>
+
+      <div></div>
     </div>
-
-
-<div>
-  
-</div>
-   </div>
   );
 }
 
