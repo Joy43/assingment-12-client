@@ -98,7 +98,7 @@
         "stock": 36,
         "brand": "Samsung",
         "category": "smartphones",
-        "image": "https://i.dummyjson.com/data/products/3/image.jpg",
+        "image": "https://i.dummyjson.com/data/products/3/image.jpg"
      },
         {
         "name": "OPPOF19",
@@ -109,7 +109,7 @@
         "stock": 123,
         "brand": "OPPO",
         "category": "smartphones",
-        "image": "https://i.dummyjson.com/data/products/4/image.jpg",
+        "image": "https://i.dummyjson.com/data/products/4/image.jpg"
         },
         {
       
@@ -121,7 +121,7 @@
         "stock": 32,
         "brand": "Huawei",
         "category": "smartphones",
-        "image": "https://i.dummyjson.com/data/products/5/image.jpg",
+        "image": "https://i.dummyjson.com/data/products/5/image.jpg"
         },
         {
             "brand": "Samsung",
@@ -177,7 +177,7 @@
         "stock": 83,
         "brand": "Apple",
         "category": "laptops",
-        "image": "https://i.dummyjson.com/data/products/6/image.png",
+        "image": "https://i.dummyjson.com/data/products/6/image.png"
         },
         {
         "name": "Samsung Galaxy Book",
@@ -188,7 +188,7 @@
         "stock": 50,
         "brand": "Samsung",
         "category": "laptops",
-        "image": "https://i.dummyjson.com/data/products/7/image.jpg",
+        "image": "https://i.dummyjson.com/data/products/7/image.jpg"
          },
         {
         "name": "Microsoft Surface Laptop 4",
@@ -199,7 +199,7 @@
         "stock": 68,
         "brand": "Microsoft Surface",
         "category": "laptops",
-        "image": "https://i.dummyjson.com/data/products/8/image.jpg",
+        "image": "https://i.dummyjson.com/data/products/8/image.jpg"
        },
         {
         "name": "Infinix INBOOK",
@@ -210,7 +210,7 @@
         "stock": 96,
         "brand": "Infinix",
         "category": "laptops",
-        "image": "https://i.dummyjson.com/data/products/9/image.jpg",
+        "image": "https://i.dummyjson.com/data/products/9/image.jpg"
         
         },
         {
@@ -222,7 +222,7 @@
         "stock": 89,
         "brand": "HP Pavilion",
         "category": "laptops",
-        "image": "https://i.dummyjson.com/data/products/10/image.jpeg",
+        "image": "https://i.dummyjson.com/data/products/10/image.jpeg"
         },
        {
             "name": "Flying Wooden Bird",
@@ -233,7 +233,7 @@
             "stock": 17,
             "brand": "Flying Wooden",
             "category": "home-decoration",
-            "image": "https://i.dummyjson.com/data/products/27/image.webp",
+            "image": "https://i.dummyjson.com/data/products/27/image.webp"
             },
             {
            "name": "3D Embellishment Art Lamp",
@@ -244,7 +244,7 @@
             "stock": 54,
             "brand": "LED Lights",
             "category": "home-decoration",
-            "image": "https://i.dummyjson.com/data/products/28/image.jpg",
+            "image": "https://i.dummyjson.com/data/products/28/image.jpg"
              },
             {
             "name": "Handcraft Chinese style",
@@ -255,8 +255,8 @@
             "stock": 7,
             "brand": "luxury palace",
             "category": "home-decoration",
-            "image": "https://i.dummyjson.com/data/products/29/image.webp",
-            },
+            "image": "https://i.dummyjson.com/data/products/29/image.webp"
+            }
           
            
             ]

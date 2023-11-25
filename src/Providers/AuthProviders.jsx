@@ -37,14 +37,15 @@ const AuthProviders= ({ children }) => {
         });
     }
 
-    useEffect(()=>{
-        const unSubcribe=onAuthStateChanged(auth,currentUser=>{
-          console.log('user in the auth changed'.currentUser);
-          setUser(currentUser)
-          setLoading(false)
-        })
-        return()=>unSubcribe();
-      },[])
+    useEffect(() => {
+        const unSubcribe = onAuthStateChanged(auth, (currentUser) => {
+          console.log('user in the auth changed', currentUser);
+          setUser(currentUser);
+          setLoading(false);
+        });
+        return () => unSubcribe();
+      }, []);
+      
 
     const authInfo = {
         user,
@@ -55,12 +56,12 @@ const AuthProviders= ({ children }) => {
         logOut,
         updateUserProfile
     }
-    
-    
+        
 // Add prop type validation
 AuthProviders.propTypes = {
     children: PropTypes.node.isRequired,
   };
+
 
     return (
         <AuthContext.Provider value={authInfo}>

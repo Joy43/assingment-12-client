@@ -8,8 +8,9 @@ const Footer = () => {
   <nav className="grid grid-flow-col gap-4">
     <a className="link link-hover">About us</a>
     <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <div className="w-10 rounded-full">
+          <img alt="Tailwind CSS Navbar component" src="https://i.ibb.co/xgW7tvh/logo.png" />
+        </div>
   </nav> 
   <nav>
     <div className="grid grid-flow-col gap-4">
@@ -34,6 +35,7 @@ const Footer = () => {
                 <div className="-mt-1 font-sans text-sm font-semibold">Google Play</div>
             </div>
         </a>
+        {/* icon */}
     </div>
   </aside>
 </footer>
