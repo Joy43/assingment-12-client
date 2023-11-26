@@ -1,16 +1,18 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../../providers/AuthProvider";
+
 import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
-import useAxiosPublic from "../../hooks/useAxiosPublic";
-import SocialLogin from "../../components/SocialLogin/SocialLogin";
+// import useAxiosPublic from "../../hooks/useAxiosPublic";
+// import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import useAuth from "../../Hooks/useAuth";
+import useAxiosPublic from "../../Hooks/Axiospublic";
 
 const SignUp = () => {
-    const axiosPublic = useAxiosPublic();
+    // const axiosPublic = useAxiosPublic();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile } =useAuth()
     const navigate = useNavigate();
 
     const onSubmit = data => {
@@ -26,7 +28,7 @@ const SignUp = () => {
                             name: data.name,
                             email: data.email
                         }
-                        axiosPublic.post('/users', userInfo)
+                        useAxiosPublic.post('/users', userInfo)
                             .then(res => {
                                 if (res.data.insertedId) {
                                     console.log('user added to the database')
@@ -51,7 +53,7 @@ const SignUp = () => {
     return (
         <>
             <Helmet>
-                <title>Bistro Boss | Sign Up</title>
+                <title> Sign Up</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
@@ -105,7 +107,7 @@ const SignUp = () => {
                             </div>
                         </form>
                         <p className="px-6"><small>Already have an account <Link to="/login">Login</Link></small></p>
-                        <SocialLogin></SocialLogin>
+                        {/* <SocialLogin></SocialLogin> */}
                     </div>
                 </div>
             </div>

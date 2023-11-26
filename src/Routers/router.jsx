@@ -10,6 +10,7 @@ import Home from "../Pages/Home/Home/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/SignIn/Signup";
+import HomeProduct from "../Pages/Prouctpage/HomeProduct";
 
 
 
@@ -32,6 +33,10 @@ element:<Login></Login>,
         {
 path:'signup',
 element:<Signup></Signup>
+        },
+        {
+          path:'product',
+          element:<HomeProduct></HomeProduct>
         },
         {
 
