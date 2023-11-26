@@ -16,22 +16,8 @@
     }
   }
   
-  /* Apply the animation to the title and description */
-  .title-animation {
-    overflow: hidden;
-    display: inline-block;
-  }
-  
-  .textanimation {
-    overflow: hidden;
-    display: inline-block;
-  }
-  
-  .textanimation::after {
-    content: '|'; /* Blinking cursor */
-    display: inline-block;
-    animation: typing 1s steps(20, end) infinite;
-  }
+
+
   
 
 

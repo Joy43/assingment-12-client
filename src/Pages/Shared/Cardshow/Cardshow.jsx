@@ -47,7 +47,7 @@ const Cardshow = () => {
 					size and diversity. With 16 major islands, The Bahamas is an unmatched destination</p>
 				<p className="text-xl font-black text-gray-800">
 					$110
-					<span className="font-normal text-gray-600 text-base">/night</span>
+					<span className="font-normal text-gray-600 text-base">/doller</span>
 				</p>
 			</div>
      
@@ -97,7 +97,7 @@ const Cardshow = () => {
 					size and diversity. With 16 major islands, The Bahamas is an unmatched destination</p>
 				<p className="text-xl font-black text-gray-800">
 					$110
-					<span className="font-normal text-gray-600 text-base">/night</span>
+					<span className="font-normal text-gray-600 text-base">/doller</span>
 				</p>
 			</div>
      
@@ -144,7 +144,7 @@ const Cardshow = () => {
 					size and diversity. With 16 major islands, The Bahamas is an unmatched destination</p>
 				<p className="text-xl font-black text-gray-800">
 					$110
-					<span className="font-normal text-gray-600 text-base">/night</span>
+					<span className="font-normal text-gray-600 text-base">/doller</span>
 				</p>
 			</div>
      
@@ -190,7 +190,7 @@ const Cardshow = () => {
 					size and diversity. With 16 major islands, The Bahamas is an unmatched destination</p>
 				<p className="text-xl font-black text-gray-800">
 					$110
-					<span className="font-normal text-gray-600 text-base">/night</span>
+					<span className="font-normal text-gray-600 text-base">/doller</span>
 				</p>
 			</div>
      

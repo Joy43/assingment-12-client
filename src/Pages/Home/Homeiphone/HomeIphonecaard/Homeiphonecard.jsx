@@ -1,11 +1,21 @@
-
+import { useState } from 'react';
+import { Ring } from 'react-awesome-spinners'
 
 const Homeiphonecard = ({product}) => {
   console.log(product);
+  const [loading, setLoading] = useState(true);
+  const handleImageLoad = () => {
+    setLoading(false);
+  }
   const { name, price, image, description, brand,rating,category } = product;
   return (
     <div className="max-w-sm rounded overflow-hidden bg-[#FFFFFF] shadow-2xl hover:shadow-xl">
-   <img className="w-full" src={image} alt="" />
+    <img
+        className={`w-full ${loading ? 'hidden' : ''}`}
+        src={image}
+        alt=""
+        onLoad={handleImageLoad}
+      />
     <div className="px-6 py-4">
       <div className="mb-2">
         <h2 className="text-xl font-bold text-gray-900">{name}</h2>
@@ -41,7 +51,7 @@ const Homeiphonecard = ({product}) => {
       </label>
         <div>
           <p className="text-sm font-medium text-gray-800">{name}</p>
-          <p className="text-xs text-gray-600">tech product</p>
+          <p className="text-xs text-gray-600">{description}</p>
         </div>
       </div>
       <div className="flex">

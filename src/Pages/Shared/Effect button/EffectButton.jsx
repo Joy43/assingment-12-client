@@ -33,7 +33,7 @@ const Effectbutton = () => {
   return (
     <>
       <div className="button-wrapper">
-        <button className="confetti-button">Search</button>
+        <button className="confetti-button">Login</button>
       </div>
     </>
   );
