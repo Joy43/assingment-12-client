@@ -5,10 +5,12 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 import useAuth from "../../../Hooks/useAuth";
 import { useState } from "react";
+import useCart from "../../../Hooks/usecart";
 
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
+    const[cart]=useCart()
 //    ----------logout------
 const handleLogOut = () => {
     logOut()
@@ -47,7 +49,7 @@ const userDropdownOptions = (
             <Link to="/dashboard/cart">
                 <button className="btn">
                     <FaShoppingCart className="mr-2"></FaShoppingCart>
-                    <div className="badge badge-primary bg-transparent"></div>
+                    <div className="badge badge-primary bg-transparent">+{cart.length}</div>
                 </button>
             </Link>
         </li>
@@ -70,7 +72,7 @@ const userDropdownOptions = (
 
     return (
         <>
-            <div className="navbar bg-base-100">
+            <div className="navbar  bg-black  text-white bg-opacity-30">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-primary lg:hidden">

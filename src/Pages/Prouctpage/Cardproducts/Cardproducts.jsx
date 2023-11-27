@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../../../Hooks/Axiospublic';
+import useCart from '../../../Hooks/usecart';
 
 
 
@@ -14,6 +15,7 @@ import useAxiosPublic from '../../../Hooks/Axiospublic';
 
 const Cardproducts = ({ product }) => {
     const { name, price, image, description, brand,rating,category,_id } = product;
+    const [cart]=useCart()
 const { user, refetch } = useAuth(); // Assuming refetch comes from useAuth
     const navigate = useNavigate();
     const location = useLocation();

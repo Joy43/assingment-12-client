@@ -11,6 +11,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/SignIn/Signup";
 import HomeProduct from "../Pages/Prouctpage/HomeProduct";
+import Dashboad from "../Layout/Dashboad/Dashboad";
+import Cart from "../Pages/Dashboad/Dashboad/Cart/Cart";
 
 
 
@@ -44,14 +46,24 @@ element:<Signup></Signup>
        
       ]
     },
-    // {
-    //   path: 'dashboard',
-    //   element: <></>,
-    //   children: [
-    //     // normal user routes
-      
+    {
+      path: 'dashboard',
+      element: <Dashboad></Dashboad>,
+      children: [
+        // normal user routes
+      {
+        path:'cart',
+        element:<Cart></Cart>,
+
+      },
+      {
+
+      },
+      {
+
+      },
         
 
-    //   ]
-    // }
+      ]
+    }
   ]);
