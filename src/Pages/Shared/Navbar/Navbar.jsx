@@ -8,7 +8,7 @@ import { useState } from "react";
 
 
 const NavBar = () => {
-    const { user, logOut,updateUserProfile } = useAuth();
+    const { user, logOut } = useAuth();
 //    ----------logout------
 const handleLogOut = () => {
     logOut()
@@ -32,8 +32,8 @@ htmlElement.setAttribute("data-theme","business")
 const themeIconSize = "30px"
 // --------------- user dopdown----------
 const userDropdownOptions = (
-    <div className="dropdown-content bg-black">
-        <p className="text-sm text-gray-500">{user?.displayName}</p>
+    <div className="dropdown-content bg-black text-white">
+        <p className="text-lg">{user?.displayName}</p>
         <Link to="/dashboard">Dashboard</Link>
         <button onClick={handleLogOut}>Logout</button>
     </div>
@@ -58,7 +58,7 @@ const userDropdownOptions = (
                         <div className="dropdown bg-fuchsia-600 dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <img alt="User Avatar"src={updateUserProfile?.photoURL} />
+                                    <img alt="User Avatar"src={user?.photoURL} />
                                 </div>
                             </div>
                             {userDropdownOptions}

@@ -5,7 +5,7 @@ import { BsEyeSlashFill, BsEyeFill } from "react-icons/bs";
 // import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import video from '../../assets/login.mp4'
 import { Link, useLocation, useNavigate} from 'react-router-dom';
-import  { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // import { Helmet } from 'react-helmet';
 import useAuth from '../../Hooks/useAuth';

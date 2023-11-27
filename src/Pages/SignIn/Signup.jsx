@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-
+import video from '../../assets/signup/signup.mp4'
 import { Link, useNavigate } from "react-router-dom";
+import  { useEffect, useRef } from 'react';
 import Swal from 'sweetalert2'
 // import useAxiosPublic from "../../hooks/useAxiosPublic";
 // import SocialLogin from "../../components/SocialLogin/SocialLogin";
@@ -14,7 +15,15 @@ const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } =useAuth()
     const navigate = useNavigate();
-
+// animation video
+const videoRef = useRef(null);
+useEffect(() => {
+    
+    videoRef.current.play();
+videoRef.current.addEventListener('ended', () => {
+      videoRef.current.play();
+    });
+  }, []);
     const onSubmit = data => {
 
         createUser(data.email, data.password)
@@ -58,8 +67,19 @@ const SignUp = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Sign up now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <video
+        ref={videoRef}
+        autoPlay
+        muted 
+        width="440"
+        height="350"
+      >
+        <source
+          src={video}
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
