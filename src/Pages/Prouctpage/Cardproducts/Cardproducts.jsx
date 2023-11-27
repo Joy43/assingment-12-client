@@ -1,19 +1,73 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { motion} from "framer-motion";
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Btneffect from '../BtnEffect/Btnproduct';
+import {  useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
+import useAuth from '../../../Hooks/useAuth';
+import Swal from 'sweetalert2';
+import useAxiosPublic from '../../../Hooks/Axiospublic';
+
 
 
 
 
 const Cardproducts = ({ product }) => {
-    const { name, price, image, description, brand,rating,category } = product;
-
+    const { name, price, image, description, brand,rating,category,_id } = product;
+const { user, refetch } = useAuth(); // Assuming refetch comes from useAuth
+    const navigate = useNavigate();
+    const location = useLocation();
+    const axiosPublic=useAxiosPublic();
+ 
     useEffect(() => {
-        AOS.init({ duration: 1000 }); // You can adjust the duration as needed
+        AOS.init({ duration: 1000 }); 
       }, []);
+
+      // -------------ADD TO CART---------------
+      const handleAddToCart = () => {
+        if (user && user.email) {
+            //send cart item to the database
+            const cartItem = {
+                menuId: _id,
+                email: user.email,
+                name,
+                image,
+                price
+            }
+            axiosPublic.post('/carts', cartItem)
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: `${name} added to your cart`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        // refetch cart to update the cart items count
+                        refetch();
+                    }
+
+                })
+        }
+        else {
+            Swal.fire({
+                title: "You are not Logged In",
+                text: "Please login to add to the cart?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, login!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    //   send the user to the login page
+                    navigate('/login', { state: { from: location } })
+                }
+            });
+        }
+    }
     return (
         <div style={{perspective:2000}}>
           
@@ -48,9 +102,9 @@ const Cardproducts = ({ product }) => {
              
                 <div className="card-actions">
                 <Link >
-                <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+                <button onClick={handleAddToCart} className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
     <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-    <span className="relative"><Btneffect></Btneffect></span>
+    <span className="relative">Add to cart</span>
   </button>
           
                    </Link>
