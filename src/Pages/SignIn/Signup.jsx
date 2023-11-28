@@ -1,17 +1,17 @@
-import { useContext } from "react";
+
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import video from '../../assets/signup/signup.mp4'
 import { Link, useNavigate } from "react-router-dom";
 import  { useEffect, useRef } from 'react';
 import Swal from 'sweetalert2'
-// import useAxiosPublic from "../../hooks/useAxiosPublic";
-// import SocialLogin from "../../components/SocialLogin/SocialLogin";
+
 import useAuth from "../../Hooks/useAuth";
 import useAxiosPublic from "../../Hooks/Axiospublic";
+import Googlelogin from "../../Providers/Googlelogin";
 
 const SignUp = () => {
-    // const axiosPublic = useAxiosPublic();
+     const axiosPublic = useAxiosPublic();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } =useAuth()
     const navigate = useNavigate();
@@ -37,7 +37,7 @@ videoRef.current.addEventListener('ended', () => {
                             name: data.name,
                             email: data.email
                         }
-                        useAxiosPublic.post('/users', userInfo)
+                        axiosPublic.post('/users', userInfo)
                             .then(res => {
                                 if (res.data.insertedId) {
                                     console.log('user added to the database')
@@ -127,7 +127,7 @@ videoRef.current.addEventListener('ended', () => {
                             </div>
                         </form>
                         <p className="px-6"><small>Already have an account <Link to="/login">Login</Link></small></p>
-                        {/* <SocialLogin></SocialLogin> */}
+                        <Googlelogin></Googlelogin>
                     </div>
                 </div>
             </div>

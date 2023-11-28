@@ -14,6 +14,8 @@ import HomeProduct from "../Pages/Prouctpage/HomeProduct";
 import Dashboad from "../Layout/Dashboad/Dashboad";
 import Cart from "../Pages/Dashboad/Dashboad/Cart/Cart";
 import PrivateRoute from "./Privaterouter";
+import { element } from "prop-types";
+import AllUsers from "../Pages/Dashboad/Dashboad/AllUsers/Allusers";
 
 
 
@@ -57,8 +59,10 @@ element:<Signup></Signup>
         element:<Cart></Cart>,
 
       },
+      //----------- admin router-------------
       {
-
+path:'users',
+element:<AllUsers></AllUsers>,
       },
       {
 

@@ -40,7 +40,7 @@ const Cardshow = () => {
 						</svg>
 					</div>
 					<div className="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
-						Superhost</div>
+						popular</div>
 				</div>
 				<h3 className="font-black text-gray-800 md:text-3xl text-xl">world iphone 12 pro</h3>
 				<p className="md:text-lg text-gray-500 text-base">The best kept secret of The Bahamas is the country’s sheer
@@ -90,7 +90,7 @@ const Cardshow = () => {
 						</svg>
 					</div>
 					<div className="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
-						Superhost</div>
+						popular</div>
 				</div>
 				<h3 className="font-black text-gray-800 md:text-3xl text-xl">the latest hp destop computer</h3>
 				<p className="md:text-lg text-gray-500 text-base">The best kept secret of The Bahamas is the country’s sheer
@@ -137,7 +137,7 @@ const Cardshow = () => {
 						</svg>
 					</div>
 					<div className="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
-						Superhost</div>
+						popular</div>
 				</div>
 				<h3 className="font-black text-gray-800 md:text-3xl text-xl">the latest smart Tv in world</h3>
 				<p className="md:text-lg text-gray-500 text-base">The best kept secret of The Bahamas is the country’s sheer
@@ -183,7 +183,7 @@ const Cardshow = () => {
 						</svg>
 					</div>
 					<div className="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
-						Superhost</div>
+						popular</div>
 				</div>
 				<h3 className="font-black text-gray-800 md:text-3xl text-xl">the latest Home decaration</h3>
 				<p className="md:text-lg text-gray-500 text-base">The best kept secret of The Bahamas is the country’s sheer

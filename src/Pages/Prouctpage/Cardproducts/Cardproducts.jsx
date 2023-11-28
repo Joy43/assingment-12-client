@@ -3,11 +3,11 @@ import 'aos/dist/aos.css';
 import { motion} from "framer-motion";
 import {  useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-
-import useAuth from '../../../Hooks/useAuth';
 import Swal from 'sweetalert2';
-import useAxiosPublic from '../../../Hooks/Axiospublic';
 import useCart from '../../../Hooks/usecart';
+import useAuth from '../../../Hooks/useAuth';
+import useaxiosSequre from '../../../Hooks/AxiosSequre';
+
 
 
 
@@ -15,11 +15,11 @@ import useCart from '../../../Hooks/usecart';
 
 const Cardproducts = ({ product }) => {
     const { name, price, image, description, brand,rating,category,_id } = product;
-    const [cart]=useCart()
-const { user, refetch } = useAuth(); // Assuming refetch comes from useAuth
+    // const [refetch]=useCart()
+const { user} = useAuth(); 
     const navigate = useNavigate();
     const location = useLocation();
-    const axiosPublic=useAxiosPublic();
+    const axiosSecure = useaxiosSequre();
  
     useEffect(() => {
         AOS.init({ duration: 1000 }); 
@@ -30,13 +30,13 @@ const { user, refetch } = useAuth(); // Assuming refetch comes from useAuth
         if (user && user.email) {
             //send cart item to the database
             const cartItem = {
-                menuId: _id,
+                productId: _id,
                 email: user.email,
                 name,
                 image,
                 price
             }
-            axiosPublic.post('/carts', cartItem)
+            axiosSecure.post('/carts', cartItem)
                 .then(res => {
                     console.log(res.data)
                     if (res.data.insertedId) {
@@ -48,7 +48,7 @@ const { user, refetch } = useAuth(); // Assuming refetch comes from useAuth
                             timer: 1500
                         });
                         // refetch cart to update the cart items count
-                        refetch();
+                        // refetch();
                     }
 
                 })
@@ -106,7 +106,7 @@ const { user, refetch } = useAuth(); // Assuming refetch comes from useAuth
                 <Link >
                 <button onClick={handleAddToCart} className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
     <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-    <span className="relative">Add to cart</span>
+    <span className="relative text-black">Add to cart</span>
   </button>
           
                    </Link>

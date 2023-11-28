@@ -1,4 +1,5 @@
-import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
+import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, } from "react-icons/fa";
+import { MdAddShoppingCart } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../../Hooks/usecart";
 
@@ -16,11 +17,12 @@ const Dashboad = () => {
                             <li>
                                 <NavLink to="/dashboard/adminHome">
                                     <FaHome></FaHome>
-                                    Admin Home</NavLink>
+                                    Admin Home
+                                    </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/addItems">
-                                    <FaUtensils></FaUtensils>
+                                    <MdAddShoppingCart></MdAddShoppingCart>
                                     Add Items</NavLink>
                             </li>
                             <li>
@@ -33,10 +35,11 @@ const Dashboad = () => {
                                     <FaBook></FaBook>
                                     Manage Bookings</NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/dashboard/users">
-                                    <FaUsers></FaUsers>
-                                    All Users</NavLink>
+                            <li >
+                                <NavLink  className=" "to="/dashboard/users">
+                                   <FaUsers></FaUsers>
+                                    All Users
+                                    </NavLink>
                             </li>
                         {/* </>
                             :
@@ -76,9 +79,9 @@ const Dashboad = () => {
                             Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/order/salad">
+                        <NavLink to="/product">
                             <FaSearch></FaSearch>
-                            Menu</NavLink>
+                            product</NavLink>
                     </li>
                     <li>
                         <NavLink to="/order/contact">
