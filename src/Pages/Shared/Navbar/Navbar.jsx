@@ -34,10 +34,10 @@ htmlElement.setAttribute("data-theme","business")
 const themeIconSize = "30px"
 // --------------- user dopdown----------
 const userDropdownOptions = (
-    <div className="dropdown-content bg-black text-white">
+    <div className="dropdown-content  bg-black text-white">
         <p className="text-lg">{user?.displayName}</p>
-        <Link to="/dashboard">Dashboard</Link>
-        <button onClick={handleLogOut}>Logout</button>
+        <Link to="/dashboard"><button className="btn-primary ">Dashboard</button></Link>
+        <button className="btn-outline" onClick={handleLogOut}>Logout</button>
     </div>
 );
 // ----------navoptions----------

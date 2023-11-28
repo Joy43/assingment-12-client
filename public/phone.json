@@ -126,6 +126,7 @@
         {
             "brand": "Samsung",
             "name": "Galaxy S22 5G",
+            "price": 699,
             "slug": "samsung_galaxy_s22_5g-11253",
             "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-5g.jpg",
             "category": "Smartphone",
@@ -134,6 +135,7 @@
           },
           {
             "brand": "Samsung",
+            "price": 469,
             "name": "Galaxy Tab S8+",
             "slug": "samsung_galaxy_tab_s8+-11342",
             "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-tab-s8-plus.jpg",
@@ -144,6 +146,7 @@
           {
             "brand": "Samsung",
             "name": "Galaxy S22 5G",
+            "price": 999,
             "slug": "samsung_galaxy_s22_5g-11253",
             "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-5g.jpg",
             "category": "Smartphone",
@@ -153,6 +156,7 @@
           {
             "brand": "Samsung",
             "name": "Galaxy Tab S8+",
+            "price": 699,
             "slug": "samsung_galaxy_tab_s8+-11342",
             "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-tab-s8-plus.jpg",
             "category": "Tablet",
@@ -162,6 +166,7 @@
           {
             "brand": "Samsung",
             "name": "Galaxy Tab S8 Ultra",
+            "price": 799,
             "slug": "samsung_galaxy_tab_s8_ultra-11274",
             "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-tab-s8-ultra.jpg",
             "category": "Tablet",
@@ -312,12 +317,5 @@
                     "category": "headphones",
                     "image": "https://i.ibb.co/7XKYVRr/ervo-rocks-Zam8-Tv-Eg-N5o-unsplash.jpg"
                   }
-                  
-                  
-
-                  
-
-          
-           
             ]
 

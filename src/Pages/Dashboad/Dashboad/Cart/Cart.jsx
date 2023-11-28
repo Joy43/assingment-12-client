@@ -1,14 +1,15 @@
 import Swal from "sweetalert2";
 import useCart from "../../../../Hooks/usecart";
-import useAxiosPublic from "../../../../Hooks/Axiospublic";
+// import useAxiosPublic from "../../../../Hooks/Axiospublic";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useaxiosSequre from "../../../../Hooks/AxiosSequre";
 
 const Cart = () => {
     const [cart, refetch] = useCart();
-    const totalPrice = cart.reduce((total, item) => total + item.price, 0);
-    const axiosPublic = useAxiosPublic()
-
+    const totalPrice = cart.reduce((total, item) => total + item?.price, 0);
+    // const axiosPublic = useAxiosPublic()
+    const axiosSecure = useaxiosSequre()
     const handleDelete = id => {
         Swal.fire({
             title: "Are you sure?",
@@ -21,7 +22,7 @@ const Cart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                axiosPublic.delete(`/carts/${id}`)
+                axiosSecure.delete(`/carts/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             refetch();
@@ -49,17 +50,17 @@ const Cart = () => {
 
             </div>
             <div className="overflow-x-auto">
-                <table className="table  w-full">
-                    {/* head */}
-                    <thead>
-                        <tr>
+                <table className="table bg-fuchsia-600 text-white  w-full">
+                    {/*-------------- head --------------------*/}
+                    <thead >
+                        <tr className="text-white  text-2xl">
                             <th>
                                 #
                             </th>
                             <th>Image</th>
                             <th>Name</th>
                             <th>Price</th>
-                            <th>Change</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,7 +70,7 @@ const Cart = () => {
                                     {index + 1}
                                 </th>
                                 <td>
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex items-center  gap-3">
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
                                                 <img src={item.image} alt="Avatar Tailwind CSS Component" />
@@ -85,7 +86,7 @@ const Cart = () => {
                                     <button
                                         onClick={() => handleDelete(item._id)}
                                         className="btn btn-ghost btn-lg">
-                                        <FaTrashAlt className="text-red-600"></FaTrashAlt>
+                                        <FaTrashAlt className="bg-slate-900"></FaTrashAlt>
                                     </button>
                                 </th>
                             </tr>)

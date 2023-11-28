@@ -13,6 +13,7 @@ import Signup from "../Pages/SignIn/Signup";
 import HomeProduct from "../Pages/Prouctpage/HomeProduct";
 import Dashboad from "../Layout/Dashboad/Dashboad";
 import Cart from "../Pages/Dashboad/Dashboad/Cart/Cart";
+import PrivateRoute from "./Privaterouter";
 
 
 
@@ -48,7 +49,7 @@ element:<Signup></Signup>
     },
     {
       path: 'dashboard',
-      element: <Dashboad></Dashboad>,
+      element:<PrivateRoute><Dashboad></Dashboad></PrivateRoute>,
       children: [
         // normal user routes
       {

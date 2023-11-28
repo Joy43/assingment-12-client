@@ -8,7 +8,7 @@ const Dashboad = () => {
         <div>
            <div className="flex">
             {/* dashboard side bar */}
-            <div className="w-64 min-h-screen bg-[#rgb(255,0,79)]">
+            <div className="w-64 min-h-screen bg-[#0000ff]">
                 <ul className="menu p-4">
                     {
                         // isAdmin ? 
