@@ -14,7 +14,7 @@ const AllUsers = () => {
             return res.data;
         }
     })
-
+// -----------admin --------------
     const handleMakeAdmin = user =>{
         axiosSecure.patch(`/users/admin/${user._id}`)
         .then(res =>{
@@ -31,7 +31,7 @@ const AllUsers = () => {
             }
         })
     }
-
+// --------------user delete--------------------
     const handleDeleteUser = user => {
         Swal.fire({
             title: "Are you sure?",
@@ -40,7 +40,7 @@ const AllUsers = () => {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: "Yes, delete it user!"
         }).then((result) => {
             if (result.isConfirmed) {
 
@@ -51,7 +51,7 @@ const AllUsers = () => {
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your file has been deleted.",
-                                icon: "success"
+                                icon: "success delete"
                             });
                         }
                     })
@@ -67,13 +67,13 @@ const AllUsers = () => {
             </div>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
-                    {/* head */}
-                    <thead>
+                    {/*--------------- head----------------- */}
+                    <thead className="text-2xl ">
                         <tr>
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Role</th>
+                            <th>Admin role</th>
                             <th>Delete</th>
                         </tr>
                     </thead>

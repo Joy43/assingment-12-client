@@ -3,6 +3,9 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 import app from "../Firebase/Firebase.config";
 export const AuthContext = createContext(null);
 import PropTypes from 'prop-types';
+import useAxiosPublic from "../Hooks/Axiospublic";
+
+
 const auth=getAuth(app)
 
 const AuthProviders= ({ children }) => {
@@ -10,7 +13,7 @@ const AuthProviders= ({ children }) => {
     const [loading, setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
 
-
+const axiosPublic=useAxiosPublic();
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
@@ -37,14 +40,39 @@ const AuthProviders= ({ children }) => {
         });
     }
 
+    // useEffect(() => {
+    //     const unSubcribe = onAuthStateChanged(auth, (currentUser) => {
+    //       console.log('user in the auth changed', currentUser);
+    //       setUser(currentUser);
+    //       setLoading(false);
+    //     });
+    //     return () => unSubcribe();
+    //   }, []);
     useEffect(() => {
-        const unSubcribe = onAuthStateChanged(auth, (currentUser) => {
-          console.log('user in the auth changed', currentUser);
-          setUser(currentUser);
-          setLoading(false);
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
+            if (currentUser) {
+                // get token and store client
+                const userInfo = { email: currentUser.email };
+                axiosPublic.post('/jwt', userInfo)
+                    .then(res => {
+                        if (res.data.token) {
+                            localStorage.setItem('access-token', res.data.token);
+                            setLoading(false);
+                        }
+                    })
+            }
+            else {
+                
+                localStorage.removeItem('access-token');
+                setLoading(false);
+            }
+            
         });
-        return () => unSubcribe();
-      }, []);
+        return () => {
+            return unsubscribe();
+        }
+    }, [axiosPublic])
       
 
     const authInfo = {

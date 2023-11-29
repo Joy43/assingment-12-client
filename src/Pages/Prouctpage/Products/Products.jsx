@@ -1,37 +1,42 @@
-
-import useProduct from '../../../Hooks/useProduct';
-import Cardproducts from '../Cardproducts/Cardproducts';
+import useProduct from "../../../Hooks/useProduct";
+import Cardproducts from "../Cardproducts/Cardproducts";
 
 const Products = () => {
   const [product] = useProduct();
+  // -----------------seatrch---------
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const searchText = e.target.search.value;
+    console.log(searchText);
+  };
 
   return (
     <div>
-      {/* search  */}
+      {/*---------- search  ------------------*/}
 
-<div className='mt-6 mb-7'>
-<form>   
-    <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-    <div className="relative">
-        <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
+      <div className="mt-6 mb-7">
+      <div className="w-full flex flex-row flex-wrap bg-gray-600 p-10 py-20 justify-center" style={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply', backgroundPosition: 'center center', backgroundImage: "url('https://images.unsplash.com/photo-1573079487717-f8ebae0b1539?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')" }}>
+      <div className="w-full text-center">
+        <div className="text-3xl text-center text-white antialiased">Get Updates</div>
+        <div className="text-xl text-center text-white antialiased">Find out about events and other news</div>
+      </div>
+
+      <form className="mt-3 flex flex-row flex-wrap" action="" method="POST">
+        <div className="text-gray-600 w-2/3">
+          <input type="text" name="email" className="w-full p-2 rounded-l-lg" placeholder="john@mail.com" />
         </div>
-        <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name, title,band..." required/>
-        <button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+        <div className="w-1/3">
+          <button className="w-full text-white p-2 bg-indigo-400 rounded-r-lg text-center hover:bg-indigo-300" type="submit">Subscribe</button>
+        </div>
+      </form>
     </div>
-</form>
-
-</div>
-
+      </div>
+      {/* -------------card product--------------- */}
       <div className="grid md:grid-cols-3 gap-5">
- 
-
- {product.map(item => (
-   <Cardproducts key={item._id} product={item} />
- ))}
-</div>
+        {product.map((item) => (
+          <Cardproducts key={item._id} product={item} />
+        ))}
+      </div>
     </div>
   );
 };

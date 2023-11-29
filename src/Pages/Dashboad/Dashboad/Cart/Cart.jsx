@@ -40,7 +40,7 @@ const Cart = () => {
     return (
         <div>
             <div className="flex justify-evenly mb-8">
-                <h2 className="text-4xl">Items: {cart.length}</h2>
+                <h2 className="text-4xl">All Items: {cart.length}</h2>
                 <h2 className="text-4xl">Total Price: {totalPrice}</h2>
                 {cart.length ? <Link to="/dashboard/payment">
                     <button className="btn btn-success">Pay</button>
@@ -50,7 +50,7 @@ const Cart = () => {
 
             </div>
             <div className="overflow-x-auto">
-                <table className="table bg-fuchsia-600 text-white  w-full">
+                <table className="table bg-[#800080] text-white  w-full">
                     {/*-------------- head --------------------*/}
                     <thead >
                         <tr className="text-white  text-2xl">

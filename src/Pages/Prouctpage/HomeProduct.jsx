@@ -1,5 +1,6 @@
 import Products from "./Products/Products";
-import Videoslider from "./Videoslider/Videoslider";
+import Videobg from "./Video backgroun/Videobg";
+// import Videoslider from "./Videoslider/Videoslider";
 import {Helmet} from "react-helmet";
 
 const HomeProduct = () => {
@@ -12,7 +13,8 @@ const HomeProduct = () => {
                 <link rel="canonical" href="" />
             </Helmet>
             <div>
-           <Videoslider></Videoslider> 
+           {/* <Videoslider></Videoslider>  */}
+           <Videobg></Videobg>
         </div>
         <div>
             <Products></Products>

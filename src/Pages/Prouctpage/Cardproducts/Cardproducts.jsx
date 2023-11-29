@@ -6,7 +6,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useCart from '../../../Hooks/usecart';
 import useAuth from '../../../Hooks/useAuth';
-import useaxiosSequre from '../../../Hooks/AxiosSequre';
+import useAxiosSecure from '../../../Hooks/AxiosSequre';
+// import useaxiosSequre from '../../../Hooks/AxiosSequre';
 
 
 
@@ -15,11 +16,11 @@ import useaxiosSequre from '../../../Hooks/AxiosSequre';
 
 const Cardproducts = ({ product }) => {
     const { name, price, image, description, brand,rating,category,_id } = product;
-    // const [refetch]=useCart()
+     const [refetch]=useCart()
 const { user} = useAuth(); 
     const navigate = useNavigate();
     const location = useLocation();
-    const axiosSecure = useaxiosSequre();
+    const axiosSecure = useAxiosSecure()
  
     useEffect(() => {
         AOS.init({ duration: 1000 }); 
@@ -48,7 +49,7 @@ const { user} = useAuth();
                             timer: 1500
                         });
                         // refetch cart to update the cart items count
-                        // refetch();
+                         refetch();
                     }
 
                 })

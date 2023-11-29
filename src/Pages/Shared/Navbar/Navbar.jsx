@@ -34,10 +34,10 @@ htmlElement.setAttribute("data-theme","business")
 const themeIconSize = "30px"
 // --------------- user dopdown----------
 const userDropdownOptions = (
-    <div className="dropdown-content mt-3 p-2 gap-2 bg-[#0000ff] text-white">
+    <div className="dropdown-content mt-3 p-2 gap-2 bg-[#ce60e1] text-white">
         <p className="text-lg">{user?.displayName}</p>
         <Link to="/dashboard"><button className="btn-primary text-white ">Dashboard</button></Link>
-        <button className="btn-outline text-white" onClick={handleLogOut}>Logout</button>
+        <button className=" btn-primary text-white" onClick={handleLogOut}>Logout</button>
     </div>
 );
 // ----------navoptions----------
@@ -45,30 +45,14 @@ const userDropdownOptions = (
         <li><Link to="/">Home</Link></li>
         <li><Link to="/product">Products</Link></li>
         <li><Link to="/contact">contact</Link></li>
-        
-        <li className="text-white bg-[#0000ff]">
-            <Link to="/dashboard/cart">
-                <button className="btn">
-                    <FaShoppingCart className="mr-2"></FaShoppingCart>
-                    <div className="badge badge-primary bg-transparent">+{cart.length}</div>
-                </button>
-            </Link>
+        <li>
+      
         </li>
+     
     
    
 
-        {user ? (
-                        <div className="dropdown bg-fuchsia-600 dropdown-end">
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img alt="User Avatar"src={user?.photoURL} />
-                                </div>
-                            </div>
-                            {userDropdownOptions}
-                        </div>
-                    ) : (
-                        <Link to="/login" className="btn btn-ghost">Login/Registration</Link>
-                    )}
+       
     </>
 
     return (
@@ -92,11 +76,39 @@ const userDropdownOptions = (
                         {navOptions}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                {/* ---------------navbar end---------- */}
+                <div className="navbar-end sm:gap-3 lg:gap-8">
+
+           <div >
+               
+           <Link className="" to="/dashboard/cart">
+                <button className="btn bg-[#c42cbf] ">
+                    <FaShoppingCart className="mr-2"></FaShoppingCart>
+                    <div className="badge badge-accent bg-transparent">+{cart.length}</div>
+                </button>
+            </Link>
+           </div>
+           <div>
+           {user ? (
+                        <div className="dropdown bg-fuchsia-800 dropdown-end">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img alt="User Avatar"src={user?.photoURL} />
+                                </div>
+                            </div>
+                            {userDropdownOptions}
+                        </div>
+                    ) : (
+                        <Link to="/login" className="btn btn-ghost">Login/Registration</Link>
+                    )}
+           </div>
+      
                     {/* theme */}
+                <div>
                 <button className="text-[#FF3811] " onClick={toogleTheame}>
 {isDarkMode ? <MdDarkMode size={themeIconSize} /> : <BsSunFill size={themeIconSize} />}
         </button>
+                </div>
                 </div>
             </div>
         </>

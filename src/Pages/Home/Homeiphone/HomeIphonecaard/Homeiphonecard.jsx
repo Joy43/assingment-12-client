@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Homeiphonecard = ({product}) => {
-  console.log(product);
+  // console.log(product);
   const [loading, setLoading] = useState(true);
   const handleImageLoad = () => {
     setLoading(false);
