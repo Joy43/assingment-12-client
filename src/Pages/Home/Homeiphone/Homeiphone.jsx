@@ -1,10 +1,11 @@
 
-import useProduct from "../../../Hooks/useProduct";
+
+import useHome from "../../../Hooks/usehome";
 import Homeiphonecard from "./HomeIphonecaard/Homeiphonecard";
 
 
 const Homeiphone = () => {
-  const [products]=useProduct()
+  const [products]=useHome()
   const laptopProducts = products.filter(item => item.category === "laptops");
 
   return (

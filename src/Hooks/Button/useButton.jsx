@@ -3,7 +3,7 @@
 import  { useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import './EffectButton.css'
-const Effectbutton = () => {
+const useButton = () => {
   useEffect(() => {
     const handleButtonClick = () => {
       let canvas = document.createElement("canvas");
@@ -39,4 +39,4 @@ const Effectbutton = () => {
   );
 };
 
-export default Effectbutton;
+export default useButton;

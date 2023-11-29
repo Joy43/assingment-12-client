@@ -1,9 +1,9 @@
 
-import useProduct from '../../../Hooks/useProduct';
+// import useProduct from '../../../Hooks/useProduct';
 import './Cardshow.css'
 const Cardshow = () => {
-    const [product]=useProduct();
-    console.log(product);
+    // const [product]=useProduct();
+    // console.log(product);
     return (
         <div>
         <div className="container">

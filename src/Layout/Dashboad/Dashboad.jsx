@@ -17,7 +17,7 @@ const Dashboad = () => {
                     {
                         isAdmin ? 
                         <>
-                            <li>
+                            {/* <li>
                                 <NavLink to="/dashboard/adminHome">
                                     <FaHome></FaHome>
                                     Admin Home
@@ -37,7 +37,7 @@ const Dashboad = () => {
                                 <NavLink to="/dashboard/bookings">
                                     <FaBook></FaBook>
                                     Manage Bookings</NavLink>
-                            </li>
+                            </li> */}
                             <li >
                                 <NavLink  className=" "to="/dashboard/users">
                                    <FaUsers></FaUsers>
