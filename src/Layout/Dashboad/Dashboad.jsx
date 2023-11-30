@@ -12,7 +12,7 @@ const Dashboad = () => {
         <div>
            <div className="flex">
             {/*---------------- dashboard side bar------------ */}
-            <div className="w-64 min-h-screen bg-[#0000ff]">
+            <div className="w-64 min-h-screen text-2xl font-bold bg-[#1d061e]">
                 <ul className="menu p-4">
                     {
                         isAdmin ? 
@@ -32,7 +32,7 @@ const Dashboad = () => {
                                     Add Items</NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/manageItems">
+                                <NavLink to="/dashboard/manageProduct">
                                     <FaList></FaList>
                                     Manage Items</NavLink>
                             </li>

@@ -18,6 +18,7 @@ import { element } from "prop-types";
 import AllUsers from "../Pages/Dashboad/Dashboad/AllUsers/Allusers";
 import AdminRoute from "./Adminrouter";
 import AddItem from "../Pages/Dashboad/Dashboad/AddItem/AddItem";
+import Manageproduct from "../Pages/Dashboad/Dashboad/ManageProduct/Manageproduct";
 
 
 
@@ -69,6 +70,10 @@ element:<AllUsers></AllUsers>,
       {
         path: 'addItems',
         element:<AddItem></AddItem>,
+      },
+      {
+path:'manageProduct',
+element:<Manageproduct></Manageproduct>
       },
         
 
