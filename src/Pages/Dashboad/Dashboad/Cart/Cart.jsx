@@ -1,15 +1,15 @@
 import Swal from "sweetalert2";
 import useCart from "../../../../Hooks/usecart";
-// import useAxiosPublic from "../../../../Hooks/Axiospublic";
+
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useaxiosSequre from "../../../../Hooks/AxiosSequre";
-import useButton from "../../../../Hooks/Button/useButton";
+
 
 
 const Cart = () => {
     const [cart, refetch] = useCart();
-    useButton();
+ 
     const totalPrice = cart.reduce((total, item) => total + item?.price, 0);
     // const axiosPublic = useAxiosPublic()
     const axiosSecure = useaxiosSequre()
@@ -43,10 +43,13 @@ const Cart = () => {
     return (
         <div>
             <div className="flex justify-evenly mb-8">
-                <h2 className="text-4xl">All Items: {cart.length}</h2>
-                <h2 className="text-4xl">Total Price: {totalPrice}</h2>
+                <h2 className="text-3xl">product: {cart.length}</h2>
+                <h2 className="text-3xl">Total Price: {totalPrice}</h2>
                 {cart.length ? <Link to="/dashboard/payment">
-                    <button className="confetti-button">Pay</button>
+                <button  className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+    <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+    <span className="relative text-black">play</span>
+  </button>
                 </Link>:
                 <button disabled className="btn btn-primary">Pay</button>
                 }
@@ -68,7 +71,7 @@ const Cart = () => {
                     </thead>
                     <tbody>
                         {
-                            cart.map((item, index) => <tr key={item._id}>
+                            cart.map((item, index) => <tr className="bg-gray-800" key={item._id}>
                                 <th>
                                     {index + 1}
                                 </th>

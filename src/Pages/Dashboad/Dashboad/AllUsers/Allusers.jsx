@@ -49,9 +49,9 @@ const AllUsers = () => {
                         if (res.data.deletedCount > 0) {
                             refetch();
                             Swal.fire({
-                                title: "Deleted!",
-                                text: "Your file has been deleted.",
-                                icon: "success delete"
+                                title: "user Delete",
+                                text: "You clicked the button!",
+                                icon: "success"
                             });
                         }
                     })

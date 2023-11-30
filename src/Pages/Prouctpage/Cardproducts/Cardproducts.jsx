@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import useCart from '../../../Hooks/usecart';
 import useAuth from '../../../Hooks/useAuth';
 import useAxiosSecure from '../../../Hooks/AxiosSequre';
-import useButton from '../../../Hooks/Button/useButton';
+
 // import useaxiosSequre from '../../../Hooks/AxiosSequre';
 
 
@@ -17,7 +17,7 @@ import useButton from '../../../Hooks/Button/useButton';
 
 const Cardproducts = ({ product }) => {
     const { name, price, image, description, brand,rating,category,_id } = product;
-    useButton();
+   
      const [refetch]=useCart()
 const { user} = useAuth(); 
     const navigate = useNavigate();
@@ -111,11 +111,11 @@ const { user} = useAuth();
              
                 <div className=" text-center  justify-center">
                 <Link >
-                {/* <button onClick={handleAddToCart} className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+                <button onClick={handleAddToCart} className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
     <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
     <span className="relative text-black">Add to cart</span>
-  </button> */}
-  <button onClick={handleAddToCart} className="confetti-button">Add to cart</button>
+  </button>
+  {/* <button onClick={handleAddToCart} className="confetti-button">Add to cart</button> */}
           
                    </Link>
                     </div>

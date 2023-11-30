@@ -14,9 +14,9 @@ import HomeProduct from "../Pages/Prouctpage/HomeProduct";
 import Dashboad from "../Layout/Dashboad/Dashboad";
 import Cart from "../Pages/Dashboad/Dashboad/Cart/Cart";
 import PrivateRoute from "./Privaterouter";
-import { element } from "prop-types";
+
 import AllUsers from "../Pages/Dashboad/Dashboad/AllUsers/Allusers";
-import AdminRoute from "./Adminrouter";
+
 import AddItem from "../Pages/Dashboad/Dashboad/AddItem/AddItem";
 import Manageproduct from "../Pages/Dashboad/Dashboad/ManageProduct/Manageproduct";
 import UpdateItem from "../Pages/Dashboad/Dashboad/UpdateItem/UpdateItem";
@@ -80,7 +80,7 @@ element:<Manageproduct></Manageproduct>
       {
         path: 'updateItem/:id',
         element:<UpdateItem></UpdateItem>,
-        loader:({params})=>fetch(`http://localhost:5000/product/${params.id}`)
+        loader:({params})=>fetch(`https://server-assingment-12.vercel.app/product/${params.id}`)
       },
       {
         path:'adminHome',

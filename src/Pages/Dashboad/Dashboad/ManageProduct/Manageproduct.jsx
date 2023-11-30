@@ -52,7 +52,7 @@ const Manageproduct = () => {
                 <th className="p-3">Brand</th>
                 <th className="p-3 text-left">Category</th>
                 <th className="p-3 text-left">Price</th>
-                <th className="p-3 text-left">Upadte</th>
+                <th className="p-3 text-left">Upadate</th>
                 <th className="p-3 text-left">Delete</th>
               </tr>
             </thead>

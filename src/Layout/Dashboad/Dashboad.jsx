@@ -39,7 +39,7 @@ const Dashboad = () => {
                             <li >
                                 <NavLink  className=" "to="/dashboard/users">
                                    <FaUsers></FaUsers>
-                                    All Users
+                                   Manage Users
                                     </NavLink>
                             </li>
                         </>

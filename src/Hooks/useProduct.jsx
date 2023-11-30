@@ -9,7 +9,7 @@ const useProduct = (search) => {
     const fetchProduct = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/product?search=${search}`);
+        const response = await fetch(`https://server-assingment-12.vercel.app/product?search=${search}`);
         const data = await response.json();
         setProduct(data);
       } catch (error) {
