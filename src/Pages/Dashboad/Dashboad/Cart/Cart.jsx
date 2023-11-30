@@ -50,7 +50,7 @@ const Cart = () => {
 
             </div>
             <div className="overflow-x-auto">
-                <table className="table bg-[#800080] text-white  w-full">
+                <table className="table bg-gray-900 text-white  w-full">
                     {/*-------------- head --------------------*/}
                     <thead >
                         <tr className="text-white  text-2xl">

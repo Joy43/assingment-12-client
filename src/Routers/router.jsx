@@ -16,6 +16,8 @@ import Cart from "../Pages/Dashboad/Dashboad/Cart/Cart";
 import PrivateRoute from "./Privaterouter";
 import { element } from "prop-types";
 import AllUsers from "../Pages/Dashboad/Dashboad/AllUsers/Allusers";
+import AdminRoute from "./Adminrouter";
+import AddItem from "../Pages/Dashboad/Dashboad/AddItem/AddItem";
 
 
 
@@ -65,7 +67,8 @@ path:'users',
 element:<AllUsers></AllUsers>,
       },
       {
-
+        path: 'addItems',
+        element:<AddItem></AddItem>,
       },
         
 

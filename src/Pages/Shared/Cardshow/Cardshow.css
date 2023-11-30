@@ -1,12 +1,12 @@
 body {
-	/* background-color: #2E3537; */
+	/* background-color: #2E3537;  */
 	font-family: 'Arial', sans-serif;
 }
 
 
 :root {
 	--cards: 4;
-	--cardHeight: 87vh;
+	--cardHeight: 47vh;
 	--cardTopPadding: 1.5em;
 	--cardMargin: 4vw;
 }
@@ -59,7 +59,7 @@ body {
 	background-color: #9CADCE;
 }
 #card4 .card-body-all {
-background-color: #6a5c5c;
+background-color: #949ade;
 }
 
 .card-body-all {

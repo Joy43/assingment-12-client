@@ -17,13 +17,16 @@ const Dashboad = () => {
                     {
                         isAdmin ? 
                         <>
-                            {/* <li>
+                           <li>
                                 <NavLink to="/dashboard/adminHome">
                                     <FaHome></FaHome>
                                     Admin Home
                                     </NavLink>
                             </li>
-                            <li>
+                         
+                            
+                             
+                               <li>
                                 <NavLink to="/dashboard/addItems">
                                     <MdAddShoppingCart></MdAddShoppingCart>
                                     Add Items</NavLink>
@@ -33,11 +36,6 @@ const Dashboad = () => {
                                     <FaList></FaList>
                                     Manage Items</NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/dashboard/bookings">
-                                    <FaBook></FaBook>
-                                    Manage Bookings</NavLink>
-                            </li> */}
                             <li >
                                 <NavLink  className=" "to="/dashboard/users">
                                    <FaUsers></FaUsers>
@@ -47,33 +45,27 @@ const Dashboad = () => {
                         </>
                             :
                             <>
-                                {/* <li>
+                            {/* ---------------user----------------- */}
+                            <li>
                                     <NavLink to="/dashboard/userHome">
                                         <FaHome></FaHome>
                                         User Home</NavLink>
                                 </li>
-                                <li>
-                                    <NavLink to="/dashboard/history">
-                                        <FaCalendar></FaCalendar>
-                                        Not History</NavLink>
-                                </li> */}
+                                
                                 <li>
                                     <NavLink to="/dashboard/cart">
                                         <FaShoppingCart></FaShoppingCart>
                                         My Cart ({cart.length})</NavLink>
                                 </li>
-                                {/* <li>
+                                 
+                                
+                                <li>
                                     <NavLink to="/dashboard/review">
                                         <FaAd></FaAd>
                                         Add a Review</NavLink>
                                 </li>
-                                <li>
-                                    <NavLink to="/dashboard/paymentHistory">
-                                        <FaList></FaList>
-                                        Real Payment History</NavLink>
-                                </li> */}
-                            </>
-                    }
+                                </>
+                                }
                     {/* ------------shared nav links ----------------*/}
                     <div className="divider"></div>
                     <li>

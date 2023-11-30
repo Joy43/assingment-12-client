@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import useCart from '../../../Hooks/usecart';
 import useAuth from '../../../Hooks/useAuth';
 import useAxiosSecure from '../../../Hooks/AxiosSequre';
+import useButton from '../../../Hooks/Button/useButton';
 // import useaxiosSequre from '../../../Hooks/AxiosSequre';
 
 
@@ -16,6 +17,7 @@ import useAxiosSecure from '../../../Hooks/AxiosSequre';
 
 const Cardproducts = ({ product }) => {
     const { name, price, image, description, brand,rating,category,_id } = product;
+    useButton();
      const [refetch]=useCart()
 const { user} = useAuth(); 
     const navigate = useNavigate();
@@ -98,17 +100,22 @@ const { user} = useAuth();
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{description}</p>
-               <div className='justify-between'>
-                <div> <p className="text-xl"><span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3'>Price</span>: ${price}</p>
-                <p ><span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3'>Band</span>:{brand}</p></div>
+               <div className='justify-around flex'>
+                <div> 
+                    <p className="text-xl"><span className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3'>Price</span>: ${price}</p>
+                    </div>
+               <div>
+               <p className='bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3'>Band:{brand}</p>
+               </div>
               </div>
              
-                <div className="card-actions">
+                <div className=" text-center  justify-center">
                 <Link >
-                <button onClick={handleAddToCart} className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+                {/* <button onClick={handleAddToCart} className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
     <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
     <span className="relative text-black">Add to cart</span>
-  </button>
+  </button> */}
+  <button onClick={handleAddToCart} className="confetti-button">Add to cart</button>
           
                    </Link>
                     </div>
