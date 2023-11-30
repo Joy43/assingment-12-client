@@ -17,7 +17,7 @@ const UpdateItem = () => {
     const axiosSecure = useAxiosSecure();
     const onSubmit = async (data) => {
         console.log(data)
-        // image upload to imgbb and then get an url
+        // ----------image upload to imgbb ------------
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(image_hosting_api, imageFile, {
             headers: {
@@ -25,7 +25,7 @@ const UpdateItem = () => {
             }
         });
         if (res.data.success) {
-            // now send the menu item data to the server with the image url
+          
             const productItem = {
                 name: data.name,
                 category: data.category,
@@ -37,12 +37,11 @@ const UpdateItem = () => {
             const productRes = await axiosSecure.patch(`/product/${_id}`, productItem);
             console.log(productRes.data)
             if(productRes.data.modifiedCount > 0){
-                // show success popup
-                // reset();
+              
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${data.name} is updated to the menu.`,
+                    title: `${data.name} is updated to the product.`,
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -64,7 +63,7 @@ const UpdateItem = () => {
                         <input
                             type="text"
                             defaultValue={name}
-                            placeholder="Recipe Name"
+                            placeholder="Product Name"
                             {...register('name', { required: true })}
                             required
                             className="input input-bordered w-full" />

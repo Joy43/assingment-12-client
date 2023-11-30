@@ -4,9 +4,12 @@ import useCart from "../../../../Hooks/usecart";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import useaxiosSequre from "../../../../Hooks/AxiosSequre";
+import useButton from "../../../../Hooks/Button/useButton";
+
 
 const Cart = () => {
     const [cart, refetch] = useCart();
+    useButton();
     const totalPrice = cart.reduce((total, item) => total + item?.price, 0);
     // const axiosPublic = useAxiosPublic()
     const axiosSecure = useaxiosSequre()
@@ -43,7 +46,7 @@ const Cart = () => {
                 <h2 className="text-4xl">All Items: {cart.length}</h2>
                 <h2 className="text-4xl">Total Price: {totalPrice}</h2>
                 {cart.length ? <Link to="/dashboard/payment">
-                    <button className="btn btn-success">Pay</button>
+                    <button className="confetti-button">Pay</button>
                 </Link>:
                 <button disabled className="btn btn-primary">Pay</button>
                 }

@@ -146,8 +146,8 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-            
-    <button className="confetti-button">Login</button>
+            <button className="confetti-button">Login</button>
+    
               </div>
       </form>
       {/* ---------------- */}

@@ -19,6 +19,8 @@ import AllUsers from "../Pages/Dashboad/Dashboad/AllUsers/Allusers";
 import AdminRoute from "./Adminrouter";
 import AddItem from "../Pages/Dashboad/Dashboad/AddItem/AddItem";
 import Manageproduct from "../Pages/Dashboad/Dashboad/ManageProduct/Manageproduct";
+import UpdateItem from "../Pages/Dashboad/Dashboad/UpdateItem/UpdateItem";
+import Adminhome from "../Pages/Dashboad/Dashboad/AdminHome/Adminhome";
 
 
 
@@ -75,6 +77,15 @@ element:<AllUsers></AllUsers>,
 path:'manageProduct',
 element:<Manageproduct></Manageproduct>
       },
+      {
+        path: 'updateItem/:id',
+        element:<UpdateItem></UpdateItem>,
+        loader:({params})=>fetch(`http://localhost:5000/product/${params.id}`)
+      },
+      {
+        path:'adminHome',
+        element:<Adminhome></Adminhome>
+      }
         
 
       ]
