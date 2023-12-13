@@ -1,9 +1,4 @@
-import {
-    createBrowserRouter,
-  } from "react-router-dom";
-
-
-
+import { createBrowserRouter } from "react-router-dom";
 
 import Mainlayout from "../Layout/Mainlayout/Mainlayout";
 import Home from "../Pages/Home/Home/Home";
@@ -21,73 +16,78 @@ import AddItem from "../Pages/Dashboad/Dashboad/AddItem/AddItem";
 import Manageproduct from "../Pages/Dashboad/Dashboad/ManageProduct/Manageproduct";
 import UpdateItem from "../Pages/Dashboad/Dashboad/UpdateItem/UpdateItem";
 import Adminhome from "../Pages/Dashboad/Dashboad/AdminHome/Adminhome";
+import Payment from "../Pages/Dashboad/payment/Payment";
+import PaymentHistory from "../Pages/Dashboad/payment/pymentstory/Paymentstory";
 
-
-
-
-  export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Mainlayout></Mainlayout>,
-     errorElement: <ErrorPage></ErrorPage>,
-      children: [
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-path:'login',
-element:<Login></Login>,
-
-        } ,
-        {
-path:'signup',
-element:<Signup></Signup>
-        },
-        {
-          path:'product',
-          element:<HomeProduct></HomeProduct>
-        },
-        {
-
-        },
-       
-      ]
-    },
-    {
-      path: 'dashboard',
-      element:<PrivateRoute><Dashboad></Dashboad></PrivateRoute>,
-      children: [
-        // normal user routes
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Mainlayout></Mainlayout>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
       {
-        path:'cart',
-        element:<Cart></Cart>,
-
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "signup",
+        element: <Signup></Signup>,
+      },
+      {
+        path: "product",
+        element: <HomeProduct></HomeProduct>,
+      },
+      {},
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboad></Dashboad>
+      </PrivateRoute>
+    ),
+    children: [
+      // normal user routes
+      {
+        path: "cart",
+        element: <Cart></Cart>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
       },
       //----------- admin router-------------
       {
-path:'users',
-element:<AllUsers></AllUsers>,
+        path: "users",
+        element: <AllUsers></AllUsers>,
       },
       {
-        path: 'addItems',
-        element:<AddItem></AddItem>,
+        path: "addItems",
+        element: <AddItem></AddItem>,
       },
       {
-path:'manageProduct',
-element:<Manageproduct></Manageproduct>
+        path: "manageProduct",
+        element: <Manageproduct></Manageproduct>,
       },
       {
-        path: 'updateItem/:id',
-        element:<UpdateItem></UpdateItem>,
-        loader:({params})=>fetch(`https://server-assingment-12.vercel.app/product/${params.id}`)
+        path: "updateItem/:id",
+        element: <UpdateItem></UpdateItem>,
+        loader: ({ params }) =>
+          fetch(`https://server-assingment-12.vercel.app/product/${params.id}`),
       },
       {
-        path:'adminHome',
-        element:<Adminhome></Adminhome>
-      }
-        
-
-      ]
-    }
-  ]);
+        path: "adminHome",
+        element: <Adminhome></Adminhome>,
+      },
+      {
+        path: "paymentHistory",
+        element: <PaymentHistory></PaymentHistory>,
+      },
+    ],
+  },
+]);
