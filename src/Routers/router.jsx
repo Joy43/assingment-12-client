@@ -16,8 +16,9 @@ import AddItem from "../Pages/Dashboad/Dashboad/AddItem/AddItem";
 import Manageproduct from "../Pages/Dashboad/Dashboad/ManageProduct/Manageproduct";
 import UpdateItem from "../Pages/Dashboad/Dashboad/UpdateItem/UpdateItem";
 import Adminhome from "../Pages/Dashboad/Dashboad/AdminHome/Adminhome";
-import Payment from "../Pages/Dashboad/payment/Payment";
+
 import PaymentHistory from "../Pages/Dashboad/payment/pymentstory/Paymentstory";
+import Payment from "../Pages/Dashboad/payment/Payment";
 
 export const router = createBrowserRouter([
   {
