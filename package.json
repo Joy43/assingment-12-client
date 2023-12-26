@@ -34,7 +34,7 @@
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
-    "stripe": "^14.8.0",
+    "stripe": "^14.10.0",
     "sweetalert2": "^11.10.1",
     "swiper": "^11.0.5",
     "video-react": "^0.16.0"

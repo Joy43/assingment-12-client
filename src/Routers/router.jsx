@@ -42,7 +42,6 @@ export const router = createBrowserRouter([
         path: "product",
         element: <HomeProduct></HomeProduct>,
       },
-      {},
     ],
   },
   {
@@ -53,7 +52,7 @@ export const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
-      // normal user routes
+      // ------------- normal user routes -------------
       {
         path: "cart",
         element: <Cart></Cart>,
