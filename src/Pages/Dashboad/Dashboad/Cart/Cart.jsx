@@ -41,12 +41,10 @@ const Cart = () => {
       <div className="flex justify-evenly mb-8">
         <h2 className="text-3xl">product: {cart.length}</h2>
         <h2 className="text-3xl">Total Price: {totalPrice}</h2>
+        {/* ----------payment interget----------- */}
         {cart.length ? (
           <Link to="/dashboard/payment">
-            <button className="group relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
-              <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-              <span className="relative text-black">play</span>
-            </button>
+            <button className="btn btn-success">paly</button>
           </Link>
         ) : (
           <button disabled className="btn btn-primary">

@@ -18,7 +18,8 @@ import UpdateItem from "../Pages/Dashboad/Dashboad/UpdateItem/UpdateItem";
 import Adminhome from "../Pages/Dashboad/Dashboad/AdminHome/Adminhome";
 
 import PaymentHistory from "../Pages/Dashboad/payment/pymentstory/Paymentstory";
-import Payment from "../Pages/Dashboad/payment/Payment";
+
+import CheackPayment from "../Pages/Dashboad/payment/Cheackpayment/CheackPayment";
 
 export const router = createBrowserRouter([
   {
@@ -59,7 +60,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "payment",
-        element: <Payment></Payment>,
+        element: <CheackPayment></CheackPayment>,
       },
       //----------- admin router-------------
       {
