@@ -92,12 +92,21 @@ const CheckoutForm = () => {
         console.log("payment saved", res.data);
         refetch();
         if (res.data?.paymentResult?.insertedId) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Thank you for the taka paisa",
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "center",
             showConfirmButton: false,
-            timer: 1500,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            },
+          });
+          Toast.fire({
+            icon: "success",
+            title: "payment sucessful ",
+            footer: " plese check your your email detils",
           });
           navigate("/dashboard/paymentHistory");
         }
@@ -111,10 +120,10 @@ const CheckoutForm = () => {
         options={{
           style: {
             base: {
-              fontSize: "16px",
+              fontSize: "20px",
               color: "#fff",
               "::placeholder": {
-                color: "#aab7c4",
+                color: "#9e2146",
               },
             },
             invalid: {

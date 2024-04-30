@@ -7,8 +7,8 @@ console.log(stripePromise);
 
 const CheackPayment = () => {
   return (
-    <div>
-      <h1>hello payment_method</h1>
+    <div className="bg-base-300 shadow-lg  p-2 text-white">
+      <h1>Welcome to payment method</h1>
       <Elements stripe={stripePromise}>
         <CheckoutForm></CheckoutForm>
       </Elements>

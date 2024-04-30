@@ -20,6 +20,7 @@ import Adminhome from "../Pages/Dashboad/Dashboad/AdminHome/Adminhome";
 import PaymentHistory from "../Pages/Dashboad/payment/pymentstory/Paymentstory";
 
 import CheackPayment from "../Pages/Dashboad/payment/Cheackpayment/CheackPayment";
+import Contactus from "../Pages/Contact/Contactus";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: "product",
         element: <HomeProduct></HomeProduct>,
+      },
+      {
+        path: "contact",
+        element: <Contactus></Contactus>,
       },
     ],
   },
