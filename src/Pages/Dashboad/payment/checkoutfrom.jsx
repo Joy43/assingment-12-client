@@ -25,7 +25,7 @@ const CheckoutForm = () => {
       axiosSecure
         .post("/create-payment-intent", { price: totalPrice })
         .then((res) => {
-          console.log(res.data.clientSecret);
+          // console.log(res.data.clientSecret);
           setClientSecret(res.data.clientSecret);
         });
     }
@@ -120,24 +120,35 @@ const CheckoutForm = () => {
         options={{
           style: {
             base: {
-              fontSize: "20px",
+              iconColor: "#c4f0ff",
               color: "#fff",
-              "::placeholder": {
-                color: "#9e2146",
+              fontWeight: "500",
+              fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
+              fontSize: "16px",
+              fontSmoothing: "antialiased",
+              ":-webkit-autofill": {
+                color: "#fce883",
               },
+              "::placeholder": {
+                color: "#87BBFD",
+              },
+              // Background color for CardElement
+              padding: "10px",
+              borderRadius: "4px",
             },
             invalid: {
-              color: "#9e2146",
+              iconColor: "#FFC7EE",
+              color: "#FFC7EE",
             },
           },
         }}
       />
       <button
-        className="btn btn-sm btn-primary my-4"
+        className="mt-8 text-lg px-4 py-3 w-full text-center font-semibold tracking-wide bg-purple-600 hover:bg-purple-700 text-white rounded-md my-4"
         type="submit"
         disabled={!stripe || !clientSecret}
       >
-        Pay
+        Make Payment
       </button>
       <p className="text-red-600">{error}</p>
       {transactionId && (

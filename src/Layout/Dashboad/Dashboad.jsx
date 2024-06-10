@@ -99,7 +99,7 @@ const Dashboad = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/order/contact">
+              <NavLink to="/contact">
                 <FaEnvelope></FaEnvelope>
                 Contact
               </NavLink>

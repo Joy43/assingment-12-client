@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MdDarkMode } from "react-icons/md";
+import { MdDarkMode, MdOutlineDashboard } from "react-icons/md";
 import { BsSunFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 
@@ -31,17 +31,7 @@ const NavBar = () => {
   };
   const themeIconSize = "30px";
   // --------------- user dopdown----------
-  const userDropdownOptions = (
-    <div className="dropdown-content mt-3 p-2 gap-2 bg-[#ce60e1] text-white">
-      <p className="text-lg">{user?.displayName}</p>
-      <Link to="/dashboard">
-        <button className="btn-primary text-white ">Dashboard</button>
-      </Link>
-      <button className=" btn-primary text-white" onClick={handleLogOut}>
-        Logout
-      </button>
-    </div>
-  );
+
   // ----------navoptions----------
   const navOptions = (
     <>
@@ -94,7 +84,7 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navOptions}</ul>
+          <ul className="menu menu-horizontal px-1 text-lg">{navOptions}</ul>
         </div>
         {/* ---------------navbar end---------- */}
         <div className="navbar-end sm:gap-3 lg:gap-8">
@@ -110,17 +100,39 @@ const NavBar = () => {
           </div>
           <div>
             {user ? (
-              <div className="dropdown bg-fuchsia-800 dropdown-end">
+              <div className="dropdown  dropdown-left">
                 <div
                   tabIndex={0}
                   role="button"
                   className="btn btn-ghost btn-circle avatar"
                 >
-                  <div className="w-10 rounded-full">
-                    <img alt="User Avatar" src={user?.photoURL} />
+                  <img
+                    className="rounded-full "
+                    alt="User Avatar"
+                    src={user?.photoURL}
+                  />
+                </div>
+
+                <div
+                  tabIndex={0}
+                  className="dropdown-content z-[1] card card-compact w-64 p-2 shadow bg-primary text-primary-content"
+                >
+                  <div className="card-body">
+                    <p className="text-lg"> Name:-{user?.displayName}</p>
+                    <Link to="/dashboard">
+                      <button className="flex items-center gap-2 rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/80 focus:outline-none focus:ring-2 focus:ring-gray-950 focus:ring-offset-2 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/80 dark:focus:ring-gray-300">
+                        <MdOutlineDashboard className="h-5 w-5" />
+                        Dashboard
+                      </button>
+                    </Link>
+                    <button
+                      className=" px-5 py-2.5 rounded-lg text-sm tracking-wider font-medium border border-orange-700 outline-none bg-transparent hover:bg-orange-700 text-orange-700 hover:text-white transition-all duration-300"
+                      onClick={handleLogOut}
+                    >
+                      Logout
+                    </button>
                   </div>
                 </div>
-                {userDropdownOptions}
               </div>
             ) : (
               <Link to="/login" className="btn btn-ghost">
