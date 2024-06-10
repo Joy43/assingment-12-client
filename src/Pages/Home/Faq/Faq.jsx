@@ -43,7 +43,7 @@ const Faq = () => {
   return (
     <div className="max-w-screen-lg mx-auto p-4">
       <h1 className="text-2xl font-semibol font-mono mb-4 text-center">
-        Frequently Asked Questions
+        Frequently Asked Questions & Answer
       </h1>
       <div className="space-y-4">
         {faqData.map((faqItem) => (
