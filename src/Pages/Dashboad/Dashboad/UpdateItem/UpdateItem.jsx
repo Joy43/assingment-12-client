@@ -15,7 +15,7 @@ const UpdateItem = () => {
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
     // ----------image upload to imgbb ------------
     const imageFile = { image: data.image[0] };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -36,7 +36,7 @@ const UpdateItem = () => {
         `/product/${_id}`,
         productItem
       );
-      console.log(productRes.data);
+      // console.log(productRes.data);
       if (productRes.data.modifiedCount > 0) {
         Swal.fire({
           position: "top-end",

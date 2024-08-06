@@ -5,7 +5,7 @@ import useProduct from "../../../Hooks/useProduct";
 const Products = () => {
   const [search, setSearch] = useState('');
   const [product] = useProduct(search);
-  console.log(product);
+  // console.log(product);
 
   const handleSearch = (e) => {
     e.preventDefault();

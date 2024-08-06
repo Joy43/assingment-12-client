@@ -28,7 +28,7 @@ const Adminhome = () => {
     },
   });
 
-  console.log(adminStats.length);
+  // console.log(adminStats.length);
   return (
     <div className="">
       <div>{user?.displayName ? user.displayName : "Back"}</div>

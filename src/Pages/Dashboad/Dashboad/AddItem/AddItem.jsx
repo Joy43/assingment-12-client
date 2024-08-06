@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
-
 import { FaShoppingCart } from "react-icons/fa";
-
 import Swal from "sweetalert2";
+
 import useAxiosPublic from "../../../../Hooks/Axiospublic";
 import useAxiosSecure from "../../../../Hooks/AxiosSequre";
 
@@ -13,17 +12,15 @@ const AddItems = () => {
   const { register, handleSubmit, reset } = useForm();
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
+
   const onSubmit = async (data) => {
-    console.log(data);
-    // image upload to imgbb and then get an url
     const imageFile = { image: data.image[0] };
-    const res = await axiosPublic.post(image_hosting_api, imageFile, {
+    const res = await useAxiosPublic.post(image_hosting_api, imageFile, {
       headers: {
         "content-type": "multipart/form-data",
       },
     });
     if (res.data.success) {
-      // now send the menu item data to the server with the image url
       const productItem = {
         name: data.name,
         category: data.category,
@@ -31,11 +28,9 @@ const AddItems = () => {
         itemproduct: data.itemproduct,
         image: res.data.data.display_url,
       };
-      //
+
       const productRes = await axiosSecure.post("/product", productItem);
-      console.log(productRes.data);
       if (productRes.data.insertedId) {
-        // show success popup
         reset();
         Swal.fire({
           position: "top-end",
@@ -46,125 +41,85 @@ const AddItems = () => {
         });
       }
     }
-    console.log(" image url", res.data);
+    console.log("image url", res.data);
   };
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-control w-full my-6">
-            <label className="label">
-              <span className="label-text">Product Name*</span>
+    <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold mb-6 text-gray-800">Add New Product</h2>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="form-group mb-6">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Product Name*
+          </label>
+          <input
+            type="text"
+            placeholder="Product Name"
+            {...register("name", { required: true })}
+            className="input input-bordered w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-200"
+          />
+        </div>
+
+        <div className="flex gap-6 mb-6">
+          <div className="form-group w-full">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Category*
             </label>
-            <input
-              type="text"
-              placeholder="Product Name"
-              {...register("name", { required: true })}
-              required
-              className="input input-bordered w-full"
-            />
-          </div>
-          <div className="flex gap-6">
-            {/*--------- category --------------*/}
-            <div className="form-control w-full my-6">
-              <label className="label">
-                <span className="label-text">Category*</span>
-              </label>
-              <select
-                defaultValue="default"
-                {...register("category", { required: true })}
-                className="select select-bordered w-full"
-              >
-                <option disabled value="default">
-                  Select a category
-                </option>
-                <option value="iPhone">Iphone</option>
-                <option value="smartphones">smartphones</option>
-                <option value="Tablet">Tablet</option>
-                <option value="laptops">Laptop</option>
-                <option value="home-decoration">Home-decoration</option>
-              </select>
-            </div>
-
-            {/* ---------------price ------------*/}
-            <div className="form-control w-full my-6">
-              <label className="label">
-                <span className="label-text">Price*</span>
-              </label>
-              <input
-                type="number"
-                placeholder="Price"
-                {...register("price", { required: true })}
-                className="input input-bordered w-full"
-              />
-            </div>
-          </div>
-
-          {/*------------- product details ---------------*/}
-
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Product Details</span>
-            </label>
-            <textarea
-              {...register("itemproduct")}
-              className="textarea textarea-bordered h-24"
-              placeholder="Bio"
-            ></textarea>
-          </div>
-
-          <div className="form-control w-full my-6">
-            <input
-              {...register("image", { required: true })}
-              type="file"
-              className="file-input w-full max-w-xs"
-            />
-          </div>
-          {/* 
-          <div className="space-y-1 text-center">
-            <svg
-              className="mx-auto h-12 w-12 text-white"
-              stroke="currentColor"
-              fill="none"
-              viewBox="0 0 48 48"
-              aria-hidden="true"
+            <select
+              defaultValue="default"
+              {...register("category", { required: true })}
+              className="select select-bordered w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-200"
             >
-              <path
-                d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-           
-            <div className="flex text-sm text-gray-600">
-              <label
-                htmlFor="file-upload"
-                className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600
-                    hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2
-                     focus-within:ring-indigo-500"
-              >
-                <span className="">Upload a file</span>
-                <input
-                  {...register("image", { required: true })}
-                  id="fileUpload"
-                  name="file-upload"
-                  type="file"
-                  className="sr-only"
-                />
-              </label>
+              <option disabled value="default">
+                Select a category
+              </option>
+              <option value="iPhone">Iphone</option>
+              <option value="smartphones">Smartphones</option>
+              <option value="Tablet">Tablet</option>
+              <option value="laptops">Laptop</option>
+              <option value="home-decoration">Home Decoration</option>
+            </select>
+          </div>
 
-              <p className="pl-1 text-white">or drag and drop</p>
-            </div>
-            <p className="text-xs text-white">PNG, JPG, GIF up to 10MB</p>
-          </div> */}
+          <div className="form-group w-full">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Price*
+            </label>
+            <input
+              type="number"
+              placeholder="Price"
+              {...register("price", { required: true })}
+              className="input input-bordered w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-200"
+            />
+          </div>
+        </div>
 
-          <button className="btn">
-            Add product <FaShoppingCart className="ml-4"></FaShoppingCart>
-          </button>
-        </form>
-      </div>
+        <div className="form-group mb-6">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Product Details
+          </label>
+          <textarea
+            {...register("itemproduct")}
+            className="textarea textarea-bordered w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-200"
+            placeholder="Details"
+          ></textarea>
+        </div>
+
+        <div className="form-group mb-6">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Upload Image*
+          </label>
+          <input
+            {...register("image", { required: true })}
+            type="file"
+            className="file-input w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-200"
+          />
+        </div>
+
+        <button className="btn bg-indigo-600 text-white p-3 rounded shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-200 flex items-center">
+          Add Product <FaShoppingCart className="ml-4" />
+        </button>
+      </form>
     </div>
   );
 };

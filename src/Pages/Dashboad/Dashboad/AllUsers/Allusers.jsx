@@ -1,111 +1,92 @@
-import { useQuery } from "@tanstack/react-query";
-
-import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
-import useaxiosSequre from "../../../../Hooks/AxiosSequre";
+import { FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import useCart from "../../../../Hooks/useCart";
+import useAxiosSecure from "../../../../Hooks/AxiosSequre";
 
 
-const AllUsers = () => {
-    const axiosSecure =useaxiosSequre()
-    const { data: users = [], refetch } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await axiosSecure.get('/users');
-            return res.data;
-        }
-    })
-// -----------admin --------------
-    const handleMakeAdmin = user =>{
-        axiosSecure.patch(`/users/admin/${user._id}`)
-        .then(res =>{
-            console.log(res.data)
-            if(res.data.modifiedCount > 0){
-                refetch();
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `${user.name} is an Admin Now!`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-            }
-        })
-    }
-// --------------user delete--------------------
-    const handleDeleteUser = user => {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it user!"
-        }).then((result) => {
-            if (result.isConfirmed) {
+const Cart = () => {
+  const [cart, refetch] = useCart();
+  const totalPrice = cart.reduce((total, item) => total + item?.price, 0);
+  const axiosSecure = useAxiosSecure();
 
-                axiosSecure.delete(`/users/${user._id}`)
-                    .then(res => {
-                        if (res.data.deletedCount > 0) {
-                            refetch();
-                            Swal.fire({
-                                title: "user Delete",
-                                text: "You clicked the button!",
-                                icon: "success"
-                            });
-                        }
-                    })
-            }
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/carts/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your item has been deleted.",
+              icon: "success",
+            });
+          }
         });
-    }
+      }
+    });
+  };
 
-    return (
-        <div>
-            <div className="flex justify-evenly my-4">
-                <h2 className="text-3xl">All Users</h2>
-                <h2 className="text-3xl">Total Users: {users.length}</h2>
-            </div>
-            <div className="overflow-x-auto">
-                <table className="table table-zebra w-full">
-                    {/*--------------- head----------------- */}
-                    <thead className="text-2xl ">
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Admin role</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            users.map((user, index) => <tr key={user._id}>
-                                <th>{index + 1}</th>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td>
-                                    { user.role === 'admin' ? 'Admin' : <button
-                                        onClick={() => handleMakeAdmin(user)}
-                                        className="btn btn-lg bg-orange-500">
-                                        <FaUsers className="text-white 
-                                        text-2xl"></FaUsers>
-                                    </button>}
-                                </td>
-                                <td>
-                                    <button
-                                        onClick={() => handleDeleteUser(user)}
-                                        className="btn btn-ghost btn-lg">
-                                        <FaTrashAlt className="text-red-600"></FaTrashAlt>
-                                    </button>
-                                </td>
-                            </tr>)
-                        }
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    );
+  return (
+    <div className="container mx-auto p-8 bg-white shadow-lg rounded-lg">
+      <div className="flex justify-between items-center mb-8">
+        <h2 className="text-3xl font-bold text-black">Products: {cart.length}</h2>
+        <h2 className="text-3xl font-bold text-black">Total Price: ${totalPrice.toFixed(2)}</h2>
+        {cart.length ? (
+          <Link to="/dashboard/payment">
+            <button className="btn btn-success">Pay</button>
+          </Link>
+        ) : (
+          <button disabled className="btn btn-primary">Pay</button>
+        )}
+      </div>
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border rounded-lg shadow overflow-hidden">
+          <thead className="bg-gray-800 text-white text-lg">
+            <tr>
+              <th className="py-3 px-6">#</th>
+              <th className="py-3 px-6">Image</th>
+              <th className="py-3 px-6">Name</th>
+              <th className="py-3 px-6">Price</th>
+              <th className="py-3 px-6">Delete</th>
+            </tr>
+          </thead>
+          <tbody className="text-gray-700 text-lg">
+            {cart.map((item, index) => (
+              <tr key={item._id} className="border-b">
+                <td className="py-3 px-6">{index + 1}</td>
+                <td className="py-3 px-6">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12">
+                      <img className="rounded-full object-cover" src={item.image} alt={item.name} />
+                    </div>
+                  </div>
+                </td>
+                <td className="py-3 px-6">{item.name}</td>
+                <td className="py-3 px-6">${item.price.toFixed(2)}</td>
+                <td className="py-3 px-6">
+                  <button
+                    onClick={() => handleDelete(item._id)}
+                    className="btn text-red-600 hover:text-red-800 transition duration-200"
+                  >
+                    <FaTrashAlt className="text-2xl" />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
 
-export default AllUsers;
+export default Cart;
