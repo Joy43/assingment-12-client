@@ -24,37 +24,37 @@ const Dashboard = () => {
       {/*---------------- Dashboard Sidebar ------------ */}
       <div className="w-64 bg-purple-900 text-white flex flex-col">
         <div className="p-4 text-2xl font-bold">Dashboard</div>
-        <ul className="menu p-4 flex-1 space-y-4">
+        <ul className="menu p-4 flex-1 space-y-4 text-white">
           {isAdmin ? (
             <>
               <li className="shadow-lg shadow-slate-300">
                 <NavLink
                   to="/dashboard/adminHome"
-                  className="flex items-center space-x-2 hover:bg-purple-800 p-2 rounded"
+                  className="flex items-center text-white space-x-2 hover:bg-purple-800 p-2 rounded"
                 >
                   <FaHome />
-                  <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Admin Home</span>
+                  <span className="flex items-center space-x-2 text-white hover:bg-purple-800 p-2 rounded">Admin Home</span>
                 </NavLink>
               </li>
               <li className="shadow-lg shadow-slate-300">
                 <NavLink
                   to="/dashboard/addItems"
-                  className="flex items-center space-x-2 hover:bg-purple-800 p-2 rounded"
+                  className="flex items-center space-x-2 text-white hover:bg-purple-800 p-2 rounded"
                 >
                   <MdAddShoppingCart />
                   <span>Add Items</span>
                 </NavLink>
               </li>
-              <li className="shadow-lg shadow-slate-300">
+              <li className="shadow-lg shadow-slate-300 text-white">
                 <NavLink
                   to="/dashboard/manageProduct"
                   className="flex items-center space-x-2 hover:bg-purple-800 p-2 rounded"
                 >
                   <FaList />
-                  <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Manage Items</span>
+                  <span className="flex items-center space-x-2 text-white hover:bg-purple-800 p-2 rounded">Manage Items</span>
                 </NavLink>
               </li>
-              <li className="shadow-lg shadow-slate-300">
+              <li className="shadow-lg shadow-slate-300 text-white">
                 <NavLink
                   to="/dashboard/users"
                   className="flex items-center space-x-2 hover:bg-purple-800 p-2 rounded"
@@ -67,7 +67,7 @@ const Dashboard = () => {
           ) : (
             <>
               {/* --------------- User ----------------- */}
-              <li className="shadow-lg shadow-slate-300">
+              <li className="shadow-lg shadow-slate-300 text-white">
                 <NavLink
                   to="/dashboard/userHome"
                   className="flex items-center space-x-2 hover:bg-purple-800 p-2 rounded"
@@ -76,7 +76,7 @@ const Dashboard = () => {
                   <span>User Home</span>
                 </NavLink>
               </li>
-              <li className="shadow-lg shadow-slate-300">
+              <li className="shadow-lg shadow-slate-300 text-white">
                 <NavLink
                   to="/dashboard/cart"
                   className="flex items-center space-x-2 hover:bg-purple-800 p-2 rounded"
@@ -85,7 +85,7 @@ const Dashboard = () => {
                   <span>My Cart ({cart.length})</span>
                 </NavLink>
               </li>
-              <li className="shadow-lg shadow-slate-300">
+              <li className="shadow-lg shadow-slate-300 text-white">
                 <NavLink
                   to="/dashboard/review"
                   className="flex items-center space-x-2 hover:bg-purple-800 p-2 rounded"
@@ -97,7 +97,7 @@ const Dashboard = () => {
               <li>
                 <NavLink
                   to="/dashboard/payment"
-                  className="flex items-center space-x-2 hover:bg-purple-800 p-2 rounded"
+                  className="flex items-center space-x-2 hover:bg-purple-800 p-2 text-white rounded"
                 >
                   <FaPaypal />
                   <span>Payment</span>
