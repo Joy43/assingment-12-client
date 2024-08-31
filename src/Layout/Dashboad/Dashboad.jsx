@@ -136,7 +136,7 @@ const Dashboard = () => {
           </li>
         </ul>
         <div className="p-4 text-center border-t border-purple-700">
-          © 2024 Dashboard
+          © 2024 World Technology
         </div>
       </div>
       {/*------------- Dashboard Content ------------------*/}
