@@ -50,7 +50,7 @@ const Homeiphonecard = ({ product }) => {
           <div className="flex justify-between ">
            <div> <p className="text-3xl font-extrabold text-blue-800">${price}</p></div>
             <div className="flex items-center ml-2">
-              <p className="text-3xl font-extrabold text-blue-800">{rating}</p>
+              <p className="text-3xl font-extrabold text-">{rating}</p>
               <svg
                 className="w-4 h-4 text-yellow-300 ml-1"
                 aria-hidden="true"
