@@ -3,8 +3,8 @@ import Swal from "sweetalert2";
 
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import useaxiosSequre from "../../../../Hooks/AxiosSequre";
-import useCart from "../../../../Hooks/useCart";
+import useCart from "../../../../Hooks/usecart";
+
 
 const Cart = () => {
   const [cart, refetch] = useCart();

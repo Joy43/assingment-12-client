@@ -7,6 +7,8 @@ import useAuth from "../../../Hooks/useAuth";
 import { useState } from "react";
 import useCart from "../../../Hooks/usecart";
 
+
+
 const NavBar = () => {
   const { user, logOut } = useAuth();
   const [cart] = useCart();

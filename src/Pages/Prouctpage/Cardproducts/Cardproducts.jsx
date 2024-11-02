@@ -6,7 +6,8 @@ import Swal from "sweetalert2";
 
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/AxiosSequre";
-import useCart from "../../../Hooks/useCart";
+import useCart from "../../../Hooks/usecart";
+
 
 const Cardproducts = ({ product }) => {
   const { name, price, image, description, brand, _id } = product;

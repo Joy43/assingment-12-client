@@ -1,8 +1,9 @@
 import Swal from "sweetalert2";
 import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import useCart from "../../../../Hooks/useCart";
+
 import useAxiosSecure from "../../../../Hooks/AxiosSequre";
+import useCart from "../../../../Hooks/usecart";
 
 
 const Cart = () => {
